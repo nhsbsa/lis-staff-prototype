@@ -22,22 +22,71 @@
   </div>
     <div class="breadcrumbs">
   <ol>
-    <li><a href="/">Home</a></li>
-    <li><a href="/typography/">Results</a></li>
-    <li aria-current="page">Customer details</li> 
+    <li><a href="search-form">PCN Search</a></li>
+    <li><a href="results">Search results</a></li>
+    <li aria-current="page">PCN details</li> 
   </ol>
 </div>
     
-    <h1 class="heading-xlarge">Joe Bloggs</h1>
+
+    
+    <div class="grid-row">
+        
+        <div class="column-full">
+            <h1 class="heading-large">PCN 123456789</h1>
+        
+        
+
+        
+            </div>
+            
+        <div class="column-full">
+        
+        <div class="column-one-half">
+    
+    <div class="grid-row">
+
+
+        <h1 class="heading-medium">PCN details</h1>
+
+        <div class="column-one-half">
+            <h2 class="heading-small">Prescription Charge</h2>
+            <p>£8.60</p>
+            <h2 class="heading-small">Penalty Charge</h2>
+            <p>£50</p>
+            <h2 class="heading-small">Surcharge</h2>
+            <p>£51</p>
+            <h2 class="heading-small">Balance Due</h2>
+            <p>£109.60</p>
+
+
+    </div>
+        
+        
+    <div class="column-one-half">
+            <h2 class="heading-small">Exemption Category</h2>
+            <p>(F) Pre-payment Certificate</p>
+            <h2 class="heading-small">PCN Sent</h2>
+            <p>28/06/2017</p>
+            <h2 class="heading-small">Respond by</h2>
+            <p>28/07/2017</p>
+    </div>
+ 
+</div>
+            
+        </div>
+        
+                <div class="column-one-half">
+    
+    
 
 <div class="grid-row">
 
   
-    <div class="column-one-third">
+
         <h1 class="heading-medium">Customer details</h1>
-        <a href="">Change</a>
-    </div>
-        <div class="column-one-third">
+
+        <div class="column-one-half">
             <h2 class="heading-small">Title</h2>
             <p>Mr</p>
             <h2 class="heading-small">First Name</h2>
@@ -47,7 +96,7 @@
             <h2 class="heading-small">Address</h2>
             <p>9 Hotspur street, Townford, NE1 0LD</p>
     </div>
-    <div class="column-one-third">
+    <div class="column-one-half">
             <h2 class="heading-small">Date of Birth</h2>
             <p>20/11/1988</p>
             <h2 class="heading-small">NHS Number</h2>
@@ -60,35 +109,41 @@
  
 </div>
     
-    <hr>
+        </div>
+        
+        </div>
+        
+        </div>
     
     <div class="grid-row">
 
-  
-    <div class="column-one-third">
-        <h1 class="heading-medium">PCN 123456789</h1>
-    </div>
-        <div class="column-one-third">
-            <h2 class="heading-small">Prescription Charge</h2>
-            <p>£8.60</p>
-            <h2 class="heading-small">Penalty Charge</h2>
-            <p>£50</p>
-            <h2 class="heading-small">Surcharge</h2>
-            <p>£0</p>
-            <h2 class="heading-small">Balance Due</h2>
-            <p>£58.60</p>
+  <div class="column-full">
+      <h2 class="heading-medium">Transactions</h2>
+      
+      <table class="internal-table">
+          <tr>
+        <th>Date</th>
+        <th>User</th> 
+        <th>Amount</th>
+        <th>Type</th>
+      </tr>
+      <tr>
+        <td>28/05/2017</td>
+        <td>System</td> 
+        <td>£58.60</td>
+          <td>Payment request</td>
+      </tr>
+      <tr>
+        <td>28/06/2017</td>
+        <td>System</td> 
+        <td>£51</td>
+          <td>Surcharge added</td>
+      </tr>
+    </table>
 
 
-    </div>
-    <div class="column-one-third">
-            <h2 class="heading-small">Exemption Category</h2>
-            <p>(F) Pre-payment Certificate</p>
-            <h2 class="heading-small">PCN Sent</h2>
-            <p>28/06/2017</p>
-            <h2 class="heading-small">Respond by</h2>
-            <p>28/07/2017</p>
-    </div>
- 
+  </div>
+
 </div>
     
     <div class="grid-row">
@@ -117,7 +172,7 @@
     </table>
       
       <br>
-      <a href="cust-tab2">Add note</a>
+      <a href="pcn-details">Add note</a>
 
 
   </div>
@@ -139,13 +194,13 @@
         <th>Balance Due</th>
       </tr>
       <tr>
-        <td><a href="cust-tab2">223456789</a></td>
+        <td><a href="pcn-details">223456789</a></td>
         <td>28/05/2017</td> 
         <td>28/06/2017</td>
           <td>£108.60</td>
       </tr>
       <tr>
-        <td><a href="cust-tab2">323456789</a></td>
+        <td><a href="pcn-details">323456789</a></td>
         <td>28/04/2017</td> 
         <td>28/05/2017</td>
           <td>£108.60</td>
@@ -156,7 +211,7 @@
   </div>
 
 </div>
-
+    
 </main>
 
 {% endblock %}

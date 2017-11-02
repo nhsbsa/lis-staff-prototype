@@ -1,0 +1,75 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  Single User View
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="grid-row">
+    
+    <div class="column-full">
+      <div class="phase-banner">
+        <p>
+          <strong class="phase-tag">ALPHA</strong>
+          <span>This is a new service – your <a href="#">feedback</a> will help us to improve it.</span>
+        </p>
+      </div>
+    </div>
+    
+  </div>
+    <div class="breadcrumbs">
+  <ol>
+    <li><a aria-current="page">PCN Search</a></li>
+  </ol>
+</div>
+    
+  <div class="grid-row">
+    
+    <div class="column-two-thirds">
+    
+      <div class="heading-group">
+
+        <h1 class="heading-large">PCN Search</h1>
+      </div>
+      
+      <form action="results" method="get" class="form">
+
+        <div class="form-group">
+
+        <div class="form-group">
+          <label class="form-label" for="middlenames">
+            Reference Number
+          </label>
+          <input class="form-control" id="middlenames" name="middlenames" type="text">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="lastname">
+            Postcode
+          </label>
+          <input class="form-control" id="lastname" name="lastname" type="text">
+        </div>
+        
+        <br>
+        
+        <div class="form-item-wrapper">
+          <div class="form-group">
+            <input class="button" type="submit" value="Search">
+          </div>
+        </div>
+
+
+        </div>
+      </form>
+    
+    
+  </div>
+            
+</div>        
+    
+</main>
+
+{% endblock %}

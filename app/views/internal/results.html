@@ -1,0 +1,65 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  Single User View
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="grid-row">
+    
+    <div class="column-full">
+      <div class="phase-banner">
+        <p>
+          <strong class="phase-tag">ALPHA</strong>
+          <span>This is a new service – your <a href="#">feedback</a> will help us to improve it.</span>
+        </p>
+      </div>
+    </div>
+    
+  </div>
+    <div class="breadcrumbs">
+  <ol>
+    <li><a href="search-form">PCN Search</a></li>
+    <li><a aria-current="page">Search results</a></li> 
+  </ol>
+</div>
+            
+<div class="grid-row">
+
+  <div class="column-full">
+      <h2 class="heading-large">Search results</h2>
+      
+      <table class="internal-table">
+          <tr>
+        <th>Reference</th>
+        <th>Name</th> 
+        <th>Address</th>
+        <th>D.O.B</th>
+      </tr>
+      <tr>
+        <td><a href="pcn-details">123456789</a></td>
+        <td>Joe Bloggs</td> 
+        <td>9 Hotspur street, Townford, NE1 0LD</td>
+          <td>20/11/1988</td>
+      </tr>
+      <tr>
+        <td><a href="pcn-details">423456789</a></td>
+        <td>Tom Spur</td> 
+        <td>14 Hotspur street, Townford, NE1 0LD</td>
+          <td>20/03/1990</td>
+      </tr>
+    </table>
+
+
+  </div>
+
+</div>
+            
+        
+    
+</main>
+
+{% endblock %}
