@@ -1,0 +1,162 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  Single User View
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="grid-row">
+    
+    <div class="column-full">
+      <div class="phase-banner">
+        <p>
+          <strong class="phase-tag">ALPHA</strong>
+          <span>This is a new service – your <a href="#">feedback</a> will help us to improve it.</span>
+        </p>
+      </div>
+    </div>
+    
+  </div>
+    <div class="breadcrumbs">
+  <ol>
+    <li><a href="/">Home</a></li>
+    <li><a href="/typography/">Results</a></li>
+    <li aria-current="page">Customer details</li> 
+  </ol>
+</div>
+    
+    <h1 class="heading-xlarge">Joe Bloggs</h1>
+
+<div class="grid-row">
+
+  
+    <div class="column-one-third">
+        <h1 class="heading-medium">Customer details</h1>
+        <a href="">Change</a>
+    </div>
+        <div class="column-one-third">
+            <h2 class="heading-small">Title</h2>
+            <p>Mr</p>
+            <h2 class="heading-small">First Name</h2>
+            <p>Joe</p>
+            <h2 class="heading-small">Surname</h2>
+            <p>Bloggs</p>
+            <h2 class="heading-small">Address</h2>
+            <p>9 Hotspur street, Townford, NE1 0LD</p>
+    </div>
+    <div class="column-one-third">
+            <h2 class="heading-small">Date of Birth</h2>
+            <p>20/11/1988</p>
+            <h2 class="heading-small">NHS Number</h2>
+            <p>20111988</p>
+            <h2 class="heading-small">Email Address</h2>
+            <p>j.blog@email.com</p>
+            <h2 class="heading-small">Tel number</h2>
+            <p>07837881678</p>
+    </div>
+ 
+</div>
+    
+    <hr>
+    
+    <div class="grid-row">
+
+  
+    <div class="column-one-third">
+        <h1 class="heading-medium">PCN 123456789</h1>
+    </div>
+        <div class="column-one-third">
+            <h2 class="heading-small">Prescription Charge</h2>
+            <p>£8.60</p>
+            <h2 class="heading-small">Penalty Charge</h2>
+            <p>£50</p>
+            <h2 class="heading-small">Surcharge</h2>
+            <p>£0</p>
+            <h2 class="heading-small">Balance Due</h2>
+            <p>£58.60</p>
+
+
+    </div>
+    <div class="column-one-third">
+            <h2 class="heading-small">Exemption Category</h2>
+            <p>(F) Pre-payment Certificate</p>
+            <h2 class="heading-small">PCN Sent</h2>
+            <p>28/06/2017</p>
+            <h2 class="heading-small">Respond by</h2>
+            <p>28/07/2017</p>
+    </div>
+ 
+</div>
+    
+    <div class="grid-row">
+
+  <div class="column-full">
+      <h2 class="heading-medium">Notes</h2>
+      
+      <table class="internal-table">
+          <tr>
+        <th>Date</th>
+        <th>Agent</th> 
+        <th>Comments</th>
+
+      </tr>
+      <tr>
+        <td>27/07/2017 13.00</td>
+        <td>Tim</td> 
+        <td>Cust told pay half to avoid surcharge. Cust non compliant, demanded manager. Call escalated</td>
+      </tr>
+    <tr>
+        <td>27/07/2017 13.30</td>
+        <td>Joanne</td> 
+        <td>Info repeated as above. Cust paid half, agreed to pay next half 27/08/17</td>
+      </tr>
+
+    </table>
+      
+      <br>
+      <a href="cust-tab2">Add note</a>
+
+
+  </div>
+
+</div>
+    
+    
+    
+<div class="grid-row">
+
+  <div class="column-full">
+      <h2 class="heading-medium">Matched records</h2>
+      
+      <table class="internal-table">
+          <tr>
+        <th>Reference</th>
+        <th>Sent</th> 
+        <th>Respond by</th>
+        <th>Balance Due</th>
+      </tr>
+      <tr>
+        <td><a href="cust-tab2">223456789</a></td>
+        <td>28/05/2017</td> 
+        <td>28/06/2017</td>
+          <td>£108.60</td>
+      </tr>
+      <tr>
+        <td><a href="cust-tab2">323456789</a></td>
+        <td>28/04/2017</td> 
+        <td>28/05/2017</td>
+          <td>£108.60</td>
+      </tr>
+    </table>
+
+
+  </div>
+
+</div>
+
+</main>
+
+{% endblock %}

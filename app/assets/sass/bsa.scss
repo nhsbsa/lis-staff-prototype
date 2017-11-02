@@ -697,37 +697,35 @@ table {
   }
 }
 
-.bold-number{
-  font-weight: bold;
-}
-
-.small-text{
-  font-size: 17px;
-}
-
-.highlighted {
-  li {
-    margin-bottom :10px;
-    span {
-      display: block;
-      font-weight: bold;
-      clear: left
+.internal-table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    td:last-child {
+      text-align: left;
     }
-  }
+    td {
+      line-height: 200%;
+
+      text-transform: none;
+      padding: 0.6315789474em 1.0526315789em 0.4736842105em 0;
+      text-align: left;
+      color: #0b0c0c;
+      border-bottom: 1px solid #bfc1c3;
+      &:nth-child(1) {
+        width: 25%;
+      }
+      &:nth-child(2) {
+        width: 25%;
+          font-weight: normal;
+      }
+      &:nth-child(3) {
+        width: 25%;
+      }
+        &:nth-child(4){
+            width: 25%;
+        }
+    }
 }
 
-
-.link-back {
-  margin-top: 30px;
-  margin-bottom: 0;
-}
-
-.or-block {
-  margin-bottom: 0;
-  font-size: 110%;
-}
-
-.tick{
-  padding-top: 15%;
-}
 
