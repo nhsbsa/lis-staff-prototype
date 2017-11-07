@@ -39,22 +39,6 @@ $(document).ready(function () {
     }
   }
     
-      //checkbox contact
-  if (document.getElementById("contact-boxes")) {
-    var textBox = document.getElementById("text");
-    var emailBox = document.getElementById("email");
-    var postBox = document.getElementById("post");
-    postBox.addEventListener('change', cancelPrefs);
-    function cancelPrefs() {
-       emailBox.checked = false;
-       textBox.checked = false;
-    }
-    emailBox.addEventListener('change', changePrefs);
-    textBox.addEventListener('change', changePrefs);
-    function changePrefs() {
-       postBox.checked = false;
-    }
-  }
     
     $('.header').click(function(){
      $(this).toggleClass('expand').nextUntil('tr.header').slideToggle(100);
@@ -73,5 +57,16 @@ $(document).ready(function(){
 	})
 
 })
+    
+    $(document).ready(function() {
+
+    $('.internal-table tr').click(function() {
+        var href = $(this).find("a").attr("href");
+        if(href) {
+            window.location = href;
+        }
+    });
+
+});
   
 })
