@@ -6,6 +6,8 @@
 
 {% block content %}
 
+
+
 <main id="content" role="main">
 
   <div class="grid-row">
@@ -32,47 +34,51 @@
     
     <div class="grid-row">
         
-        <div class="column-full">
-            <h1 class="heading-medium">PCN 123456789</h1>
-
-        
-            </div>
             
         <div class="column-full">
         
         <div class="column-one-third">
     
-    <div class="grid-row">
+    <div class="grid-row highlight">
         
         
 
 
-        <h1 class="heading-small">PCN details</h1>
+        <h1 class="heading-small">PCN 123456789</h1>
 
         <div class="column-one-half">
             
-            <h2 class="heading-small">Prescription Charge</h2>
+            <h2 class="heading-small">Prescription</h2>
 
             <p>£8.60</p>
 
-            <h2 class="heading-small">Penalty Charge</h2>
+            <h2 class="heading-small">Penalty</h2>
             <p>£50</p>
             <h2 class="heading-small">Surcharge</h2>
             <p>£51</p>
             <h2 class="heading-small">Balance Due</h2>
             <p>£109.60</p>
+            <h2 class="heading-small">Sent</h2>
+            <p>28/06/2017</p>
+            <h2 class="heading-small">Respond by</h2>
+            <p>28/07/2017</p>
                 
 
     </div>
         
         
     <div class="column-one-half">
-            <h2 class="heading-small">Exemption Category</h2>
+            <h2 class="heading-small">Items</h2>
+            <p>1</p>
+            <h2 class="heading-small">Dispenser</h2>
+            <p>FRN15</p>
+            <h2 class="heading-small">Exemption</h2>
             <p>(F) Pre-payment Certificate</p>
-            <h2 class="heading-small">PCN Sent</h2>
-            <p>28/06/2017</p>
-            <h2 class="heading-small">Respond by</h2>
-            <p>28/07/2017</p>
+            <h2 class="heading-small">Evidence</h2>
+            <p>N</p>
+            <h2 class="heading-small">DWP Checked</h2>
+            <p>N</p>
+
     </div>
  
 
@@ -84,7 +90,7 @@
     
     
 
-<div class="grid-row">
+<div class="grid-row highlight">
 
   
 
@@ -129,19 +135,19 @@
             
                             <div class="column-one-third">
                                 <br>
-    
-    
-
-<details role="group">
-
-    <summary role="button" aria-controls="details-content-0" aria-expanded="true"><span class="summary">Transactions</span></summary>
-
-    <div id="details-content-0" aria-hidden="false">
       
         <div class="column-full">
-<!--      <h2 class="heading-small">Transactions</h2>-->
-      
-      <table class="internal-table">
+
+      <div class="container">
+
+	<ul class="tabs">
+		<li class="tab-link current" data-tab="tab-1">Transactions</li>
+		<li class="tab-link" data-tab="tab-2">Notes</li>
+		<li class="tab-link" data-tab="tab-3">Matched records</li>
+	</ul>
+
+	<div id="tab-1" class="tab-content current">
+		      <table class="internal-table">
           <tr>
         <th>Date</th>
         <th>User</th> 
@@ -161,25 +167,8 @@
           <td>Surcharge added</td>
       </tr>
     </table>
-      
-      
-
-  </div>
-
-
-    </div>
-    
-  </details>
-                                <details role="group">
-
-    <summary role="button" aria-controls="details-content-0" aria-expanded="true"><span class="summary">Notes</span></summary>
-
-    <div id="details-content-0" aria-hidden="false">
-        <div id="smaller-text">
-      
-        <div class="column-full">
-<!--      <h2 class="heading-small">Notes</h2>-->
-      
+	</div>
+	<div id="tab-2" class="tab-content">
       <table class="internal-table">
           <tr>
         <th>Date</th>
@@ -197,33 +186,11 @@
         <td>Joanne</td> 
         <td>Info repeated as above. Cust paid half, agreed to pay next half 27/08/17</td>
       </tr>
-          
-
     </table>
-      
-    <br>
-      <a href="notes">Add note</a>
-      
-      
-
-  </div>
-
-                                    </div>
-        
-    </div>
-    
-  </details>
-                                
-                                
-                                                                <details role="group">
-
-    <summary role="button" aria-controls="details-content-0" aria-expanded="true"><span class="summary">Matched records</span></summary>
-
-    <div id="details-content-0" aria-hidden="false">
-      
-        <div class="column-full">
-<!--      <h2 class="heading-small">Matched records</h2>-->
-      
+            <br>
+      <a href="#">Add note</a>
+	</div>
+	<div id="tab-3" class="tab-content">
       <table class="internal-table">
           <tr>
         <th>Reference</th>
@@ -244,16 +211,16 @@
           <td>£108.60</td>
       </tr>
     </table>
-      
+	</div>
+
+
+</div>
       
 
   </div>
 
 
-    </div>
-    
-  </details>
-    
+                                
         </div>
         
         </div>
