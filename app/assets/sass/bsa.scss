@@ -190,6 +190,7 @@ body {
   border: 10px solid #DEE0E2;
   background-color: #F8F8F8;
   padding: 15px;
+    padding-top: 0px;
   margin-top: 15px;
     margin-left: 1px;
     
@@ -902,7 +903,7 @@ div.tab button.active {
 		}
 		ul.tabs li{
 			background: #dee0e2;
-			color: #222;
+			color: #005ea5;
 			display: inline-block;
 			padding: 10px 15px;
 			cursor: pointer;
@@ -941,4 +942,20 @@ div.tab button.active {
 
 .form-control{
     width: 100%;
+}
+
+.lpads{
+    padding-left: 0px;
+}
+
+.rpads{
+    padding-right: 0px;
+}
+
+.change-spacep{
+    margin-bottom: 1px;
+}
+
+.change-spacea{
+    margin-bottom: 16px;
 }
