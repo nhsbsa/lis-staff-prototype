@@ -55,5 +55,23 @@ $(document).ready(function () {
        postBox.checked = false;
     }
   }
+    
+    $('.header').click(function(){
+     $(this).toggleClass('expand').nextUntil('tr.header').slideToggle(100);
+});
+    
+$(document).ready(function(){
+	
+	$('ul.tabs li').click(function(){
+		var tab_id = $(this).attr('data-tab');
+
+		$('ul.tabs li').removeClass('current');
+		$('.tab-content').removeClass('current');
+
+		$(this).addClass('current');
+		$("#"+tab_id).addClass('current');
+	})
+
+})
   
 })

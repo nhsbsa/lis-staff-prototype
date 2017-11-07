@@ -191,6 +191,8 @@ body {
   background-color: #F8F8F8;
   padding: 15px;
   margin-top: 15px;
+    margin-left: 1px;
+    
   h2 {
     margin-top :0;
   }
@@ -701,12 +703,14 @@ table {
     border-collapse: collapse;
     border-spacing: 0;
     width: 100%;
+
     td:last-child {
       text-align: left;
+        
     }
     td {
       line-height: 200%;
-
+        font-size: smaller;
       text-transform: none;
       padding: 0.6315789474em 1.0526315789em 0.4736842105em 0;
       text-align: left;
@@ -828,4 +832,113 @@ table {
   }
 }
 
+#content{
+    max-width: 95%;
+}
 
+
+.column-full{
+    font-size: smaller;
+}
+
+table, tr, td, th
+{
+
+    border-collapse:collapse;
+}
+tr.header
+{
+    cursor:pointer;
+    border-style: hidden;
+}
+.header .sign:after{
+  content:"►";
+  display:inline-block;      
+}
+.header.expand .sign:after{
+  content:"▼";
+ }
+
+/* Style the tab */
+div.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+
+/* Style the buttons inside the tab */
+div.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+}
+
+/* Change background color of buttons on hover */
+div.tab button:hover {
+    background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+div.tab button.active {
+    background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+}
+
+		ul.tabs{
+			margin: 0px;
+			padding: 0px;
+			list-style: none;
+		}
+		ul.tabs li{
+			background: #dee0e2;
+			color: #222;
+			display: inline-block;
+			padding: 10px 15px;
+			cursor: pointer;
+		}
+		ul.tabs li a{
+    background-color: #dee0e2;
+    border: 0 none;
+    float: left;
+    margin: 0.2631578947em 0.2631578947em 0.2631578947em 0;
+    padding: 0.4736842105em 1em;
+    text-align: center;
+		}
+
+		ul.tabs li.current{
+			border: 1px solid #bfc1c3;
+    border-bottom: 1px solid transparent;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0.6842105263em 0.9473684211em 0.7368421053em;
+            background: #fff;
+		}
+
+		.tab-content{
+			display: none;
+			padding: 15px;
+		}
+
+		.tab-content.current{
+			display: inherit;
+		}
+#search {
+    background-color: #dee0e2;
+    margin: 20px 0 30px 0;
+    padding: 20px 25px 0px 25px;
+}
+
+.form-control{
+    width: 100%;
+}
