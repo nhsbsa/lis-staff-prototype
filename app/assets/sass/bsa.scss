@@ -38,9 +38,14 @@ input.form-control, textarea.form-control {
   border: 2px solid grey;
 }
 
+//fonts
 p, td, internal-table td, li {
   font-size: 16px;
   color: #333333;
+}
+
+.column-half, .column-one-half {
+  padding: 0 0 0 15px;
 }
 
 #global-header {
