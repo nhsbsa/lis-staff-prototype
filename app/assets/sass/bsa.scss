@@ -32,36 +32,51 @@ body {
   color: #333333;
 }
 
-//#global-header {
-//  height :170px;
-//  background: url('/public/images/bsa/header-bsa.svg') transparent;
-//  background-repeat: no-repeat;
-//  background-position: center bottom;
-//  height: 170px;
-//  @media screen and (max-width: $break-small) {
-//    height: auto;
-//    background: transparent;
-//    border-bottom: 1px solid grey;
-//    padding-bottom: 15px;
-//    margin-bottom: 15px;
-//  }
-//  .header-wrapper {
-//    background: transparent;
-//  }
-//  #bsa-logo {
-//    width: 300px;
-//    margin: 20px 15px 0 0;
-//    max-width: 100%;
-//    float: right;
-//    @media screen and (max-width: $break-small) {
-//      width: 92%;
-//      margin: 0;
-//      max-width: 100%;
-//      float: right;
-//      padding: 5% 4% 0;
-//    }
-//  }
-//}
+input.form-control, textarea.form-control {
+  height: 30px;
+  margin-bottom: 3px;
+  border: 2px solid grey;
+}
+
+//fonts
+p, td, internal-table td, li {
+  font-size: 16px;
+  color: #333333;
+}
+
+.column-half, .column-one-half {
+  padding: 0 0 0 15px;
+}
+
+#global-header {
+  height: auto;
+  background: white;
+  border-bottom: 1px solid lightgrey;
+  margin-bottom: 20px;
+  @media screen and (max-width: $break-small) {
+    height: auto;
+    background: transparent;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+  }
+  .header-wrapper {
+    background: transparent;
+    max-width: 100%;
+  }
+  #bsa-logo {
+    width: 250px;
+    margin: 20px 35px 20px 0;
+    max-width: 100%;
+    float: right;
+    @media screen and (max-width: $break-small) {
+      width: 92%;
+      margin: 0;
+      max-width: 100%;
+      float: right;
+      padding: 5% 4% 0;
+    }
+  }
+}
 
 //done-page
 
@@ -700,18 +715,23 @@ table {
   }
 }
 
+.add {
+  font-size: 16px;
+  display: block;
+  margin: 15px 0 10px 0;
+}
+
 .internal-table {
     border-collapse: collapse;
     border-spacing: 0;
     width: 100%;
+    font-size: 16px;
 
     td:last-child {
       text-align: left;
         
     }
     td {
-     
-        font-size: smaller;
       text-transform: none;
       padding: 0.6315789474em 1.0526315789em 0.4736842105em 0;
       text-align: left;
@@ -736,6 +756,10 @@ table {
     }
 }
 
+.tabs {
+border-bottom: 1px solid #bfc1c3;
+  height: 45px;
+}
 
 .tabs-content {
   clear: both;
@@ -930,8 +954,9 @@ div.tab button.active {
 		}
 
 		.tab-content{
-			display: none;
-			padding: 15px;
+		  display: none;
+          margin: 10px 0 0 0;
+          
 		}
 
 		.tab-content.current{

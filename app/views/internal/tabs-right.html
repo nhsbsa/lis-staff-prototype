@@ -1,4 +1,4 @@
-{% extends "layout_bsa.html" %}
+{% extends "layout_bsa_internal.html" %}
 
 {% block page_title %}
   Single User View
@@ -7,23 +7,6 @@
 {% block content %}
 
 <main id="content" role="main">
-  <div class="grid-row">
-    <div class="column-full">
-      <div class="phase-banner">
-        <p>
-          <strong class="phase-tag">ALPHA</strong>
-          <span>This is a new service – your <a href="#">feedback</a> will help us to improve it.</span>
-        </p>
-      </div>
-    </div> 
-  </div>
-    <div class="breadcrumbs">
-      <ol>
-        <li><a href="search-form">PCN Search</a></li>
-        <li><a href="results">Search results</a></li>
-        <li aria-current="page">PCN details</li> 
-      </ol>
-    </div>    
     <div class="grid-row">
         <div class="column-full">
             <div class="column-one-third lpads det-width">
@@ -126,8 +109,9 @@
                             </table>
                         </div>
                         <div id="tab-2" class="tab-content">
+
                             <a href="#">+ Add note</a>
-                            
+
                             <table class="internal-table">
                                 <thead>
                                   <tr>
