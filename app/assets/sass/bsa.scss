@@ -38,6 +38,11 @@ input.form-control, textarea.form-control {
   border: 2px solid grey;
 }
 
+p, td, internal-table td, li {
+  font-size: 16px;
+  color: #333333;
+}
+
 #global-header {
   height: auto;
   background: white;
@@ -722,8 +727,6 @@ table {
         
     }
     td {
-     
-        font-size: smaller;
       text-transform: none;
       padding: 0.6315789474em 1.0526315789em 0.4736842105em 0;
       text-align: left;
@@ -750,7 +753,7 @@ table {
 
 .tabs {
 border-bottom: 1px solid #bfc1c3;
-  height: 37px;
+  height: 45px;
 }
 
 .tabs-content {
