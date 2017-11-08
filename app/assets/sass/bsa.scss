@@ -32,6 +32,12 @@ body {
   color: #333333;
 }
 
+input.form-control, textarea.form-control {
+  height: 30px;
+  margin-bottom: 3px;
+  border: 2px solid grey;
+}
+
 #global-header {
   height: auto;
   background: white;
@@ -699,10 +705,17 @@ table {
   }
 }
 
+.add {
+  font-size: 16px;
+  display: block;
+  margin: 15px 0 10px 0;
+}
+
 .internal-table {
     border-collapse: collapse;
     border-spacing: 0;
     width: 100%;
+    font-size: 16px;
 
     td:last-child {
       text-align: left;
@@ -735,6 +748,10 @@ table {
     }
 }
 
+.tabs {
+border-bottom: 1px solid #bfc1c3;
+  height: 37px;
+}
 
 .tabs-content {
   clear: both;
@@ -929,8 +946,9 @@ div.tab button.active {
 		}
 
 		.tab-content{
-			display: none;
-			padding: 15px;
+		  display: none;
+          margin: 10px 0 0 0;
+          
 		}
 
 		.tab-content.current{
