@@ -4,14 +4,32 @@
   Single User View
 {% endblock %}
 
+{% block after_header %}
+  <div id="menu">
+    <div id="menu-content">
+      <div class="grid-row">
+        <div class="column-half">
+          <ul class="visually-hidden">
+            <li><a class="menu-button selected" href="results">Search</a></li>
+          </ul>
+        </div>
+        <div class="column-half" id="logout">
+          <a href="#">Log out</a>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
 {% block content %}
 
 <main id="content" role="main">
 
   <div class="grid-row">
     
+      <h2 class="heading-medium">PCN Search</h2>
+    
 <div id="search">
-      <h2 class="heading-medium" style="margin: 0 0 20px 0">PCN Search</h2>
 <div class="grid-row">
    <div class="column-one-third">
        <span class="form-label">Reference number</span>
