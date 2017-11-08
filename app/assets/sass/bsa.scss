@@ -32,36 +32,35 @@ body {
   color: #333333;
 }
 
-//#global-header {
-//  height :170px;
-//  background: url('/public/images/bsa/header-bsa.svg') transparent;
-//  background-repeat: no-repeat;
-//  background-position: center bottom;
-//  height: 170px;
-//  @media screen and (max-width: $break-small) {
-//    height: auto;
-//    background: transparent;
-//    border-bottom: 1px solid grey;
-//    padding-bottom: 15px;
-//    margin-bottom: 15px;
-//  }
-//  .header-wrapper {
-//    background: transparent;
-//  }
-//  #bsa-logo {
-//    width: 300px;
-//    margin: 20px 15px 0 0;
-//    max-width: 100%;
-//    float: right;
-//    @media screen and (max-width: $break-small) {
-//      width: 92%;
-//      margin: 0;
-//      max-width: 100%;
-//      float: right;
-//      padding: 5% 4% 0;
-//    }
-//  }
-//}
+#global-header {
+  height: auto;
+  background: white;
+  border-bottom: 1px solid lightgrey;
+  margin-bottom: 20px;
+  @media screen and (max-width: $break-small) {
+    height: auto;
+    background: transparent;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+  }
+  .header-wrapper {
+    background: transparent;
+    max-width: 100%;
+  }
+  #bsa-logo {
+    width: 250px;
+    margin: 20px 35px 20px 0;
+    max-width: 100%;
+    float: right;
+    @media screen and (max-width: $break-small) {
+      width: 92%;
+      margin: 0;
+      max-width: 100%;
+      float: right;
+      padding: 5% 4% 0;
+    }
+  }
+}
 
 //done-page
 
