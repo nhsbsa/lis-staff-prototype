@@ -44,6 +44,12 @@ p, td, internal-table td, li {
   color: #333333;
 }
 
+//menu
+#logout {
+  text-align: right;
+  padding-right: 15px;
+}
+
 .column-half, .column-one-half {
   padding: 0 0 0 15px;
 }
@@ -65,7 +71,7 @@ p, td, internal-table td, li {
   }
   #bsa-logo {
     width: 250px;
-    margin: 20px 35px 20px 0;
+    margin: 20px 20px 20px 0;
     max-width: 100%;
     float: right;
     @media screen and (max-width: $break-small) {
