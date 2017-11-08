@@ -92,12 +92,11 @@
                 <div class="column-full rpads">
                     <div class="container rpads">
                         <ul class="tabs rpads">
-                            <li class="tab-link current" data-tab="tab-1">Transactions</li>
+                            <li class="tab-link" data-tab="tab-1">Transactions</li>
                             <li class="tab-link" data-tab="tab-2">Notes</li>
-                            <li class="tab-link" data-tab="tab-3">Matches</li>
-                            <li class="tab-link" data-tab="tab-4">Possible matches</li>
+                            <li class="tab-link current" data-tab="tab-3">Matched records</li>
                         </ul>
-                        <div id="tab-1" class="tab-content current rpads">
+                        <div id="tab-1" class="tab-content rpads">
                             <div class="makeScrollable">
                             <table class="internal-table">
                                 <thead>  
@@ -180,10 +179,10 @@
                                 
                             <br>
                         </div>
-                        <div id="tab-3" class="tab-content">
+                        <div id="tab-3" class="tab-content current">
                             
                             <h3 class="heading-small">Matches</h3>
-                            <div class="makeScrollable">
+                            <div class="makeScrollable1">
                           <table class="internal-table">
                               <thead>
                                 <tr>
@@ -212,15 +211,20 @@
                                     <td>Open</td>
                                     <td><a href="">Delink</a></td>
                                 </tr>
+                                <tr>
+                                    <td><a href="tabs-right">423456789</a></td>
+                                    <td>28/3/17</td> 
+                                    <td>28/4/17</td>
+                                    <td>£108.60</td>
+                                    <td>Open</td>
+                                    <td><a href="tabs-right">Delink</a></td>
+                                </tr>
                                   </tbody>
                             </table>
                             </div>
-                        </div>
-                                                <div id="tab-4" class="tab-content">
-                            
-                            <h3 class="heading-small">Matches</h3>
-                            <div class="makeScrollable">
-                          <table class="internal-table">
+                            <h3 class="heading-small">Potential matches</h3>
+                            <div class="makeScrollable1">
+                            <table class="internal-table">
                                 <thead>
                                 <tr>
                                     <th>Reference</th>
@@ -228,24 +232,17 @@
                                     <th>Address</th>
                                     <th>D.O.B</th>
                                     <th></th>
+                                    <th></th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr>
-                                    <td><a href="tabs-right">423456789</a></td>
-                                    <td>Joe J Bloggs</td> 
-                                    <td>9 Hotspur street, Townford, NE1 0LD</td>
-                                    <td>20/11/1988</td>
-                                    <td><a href="tabs-right-linked">Link</a></td>
-
-                                </tr>
                                 <tr>
                                     <td><a href="tabs-right">523456789</a></td>
                                     <td>Joe Bloggs</td> 
                                     <td>17 Trump street, Townford, NE1 5LD</td>
                                     <td>20/11/1988</td>
                                     <td><a href="">Link</a></td>
-
+                                    <td><a href="">Delink</a></td>
                                 </tr>
                                                                     <tr>
                                     <td><a href="tabs-right">623456789</a></td>
@@ -253,7 +250,7 @@
                                     <td>9 Hotspur street, Townford, NE1 5LD</td>
                                     <td>20/11/1988</td>
                                     <td><a href="">Link</a></td>
-
+                                    <td><a href="">Delink</a></td>
                                 </tr>
                                 </tbody>
                             </table>
