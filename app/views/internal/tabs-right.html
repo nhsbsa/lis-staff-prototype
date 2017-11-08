@@ -4,23 +4,35 @@
   Single User View
 {% endblock %}
 
+{% block after_header %}
+  <div id="menu">
+    <div id="menu-content">
+      <div class="grid-row">
+        <div class="column-half">
+          <ul>
+            <li>
+              <a class="menu-button" href="results">Back to search</a>
+            </li>
+            <li>
+              <a class="menu-button" href="">Close</a>
+            </li>
+            <li>
+              <a class="menu-button" href="">Hold</a>
+            </li>
+          </ul>
+        </div>
+        <div class="column-half" id="logout">
+          <a href="#">Log out</a>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
 {% block content %}
 
 <main id="content" role="main">
-  
-    <div class="grid-row">
-      <div class="column-half">
-        <ul>
-          <li><a href="#">item 1</a></li>
-        </ul>
-      </div>
-      <div class="column-half" id="logout">
-        <ul>
-          <li><a href="#">Log out</a></li>
-        </ul>
-      </div>
-    </div>
-  
+    
     <div class="grid-row">
         <div class="column-full">
             <div class="column-one-third lpads det-width">
