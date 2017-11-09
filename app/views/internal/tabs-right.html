@@ -14,10 +14,46 @@
               <a class="menu-button" href="results">Back to search</a>
             </li>
             <li>
-              <a class="menu-button" href="">Close</a>
+              <a id="myBtn" class="menu-button">Close</a>
+                <div id="closeReason" class="modal">
+                  <!-- Modal content -->
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h3 class="heading-small">Reasons</h3>
+                  <select class="form-control" id="select-box" name="select-box">
+                    <option>GOV.UK elements option 1</option>
+                    <option>GOV.UK elements option 2</option>
+                    <option>GOV.UK elements option 3</option>
+                  </select>
+                  <br/>
+                  <a class="button" id="search-button" href="results" role="button">Done</a>
+                                            <br/>
+                      <a href="tabs-right">Cancel</a>
+                  </div>
+                </div>
             </li>
             <li>
-              <a class="menu-button" href="">Hold</a>
+              <a id="myBtn1" class="menu-button">Hold</a>
+                <div id="holdReason" class="modal1">
+                  <!-- Modal content -->
+                  <div class="modal-content">
+                    <span class="close1">&times;</span>
+                    <h3 class="heading-small">Reason</h3>
+                      <br/>
+                      <div class="form-group">
+                    <select class="form-control" id="select-box" name="select-box">
+                        <option>GOV.UK elements option 1</option>
+                        <option>GOV.UK elements option 2</option>
+                        <option>GOV.UK elements option 3</option>
+                    </select>
+                          </div>
+                      <br/>
+                      <a class="button" id="search-button" href="results" role="button">Done</a>
+                      <br/>
+                      <a href="tabs-right">Cancel</a>
+ 
+                  </div>
+                </div>
             </li>
           </ul>
         </div>
@@ -27,6 +63,7 @@
       </div>
     </div>
   </div>
+
 {% endblock %}
 
 {% block content %}
@@ -38,6 +75,7 @@
             <div class="column-one-third lpads det-width">
                 <div class="grid-row highlight">
                     <h1 class="heading-small">PCN 123456789</h1>
+
                     <div class="column-one-half lpads">
                         <h2 class="heading-small">Prescription</h2>
                         <p>£8.60</p>
@@ -45,6 +83,8 @@
                         <p>£50</p>
                         <h2 class="heading-small">Surcharge</h2>
                         <p>£51</p>
+                                                <h2 class="heading-small">Paid</h2>
+                        <p>£0</p>
                         <h2 class="heading-small">Balance</h2>
                         <p>£109.60</p>
                         <h2 class="heading-small">Sent</h2>
@@ -63,6 +103,7 @@
                         <p>No</p>
                         <h2 class="heading-small">DWP</h2>
                         <p>No</p>
+                        <a href="#">View Prescription</a>
                     </div>
                 </div>
             </div>
@@ -137,11 +178,8 @@
                             </table>
                             </div>
                         </div>
-                        <div id="tab-2" class="tab-content">
-
-                            
-                            
-<div class="makeScrollable">
+                        <div id="tab-2" class="tab-content">    
+                            <div class="makeScrollable">
                             <table class="internal-table">
                                 <thead>
                                   <tr>
@@ -214,7 +252,7 @@
                                     <td>28/6/17</td>
                                     <td>£108.60</td>
                                     <td>Open</td>
-                                    <td><a href="">Delink</a></td>
+                                    <td><a href=""></a></td>
                                 </tr>
                                 <tr>
                                     <td><a href="tabs-right">323456789</a></td>
@@ -238,6 +276,7 @@
                                     <th>Reference</th>
                                     <th>Name</th> 
                                     <th>Address</th>
+                                    <th>Postcode</th>
                                     <th>D.O.B</th>
                                     <th></th>
                                 </tr>
@@ -246,30 +285,31 @@
                                 <tr>
                                     <td><a href="tabs-right">423456789</a></td>
                                     <td>Joe J Bloggs</td> 
-                                    <td>9 Hotspur street, Townford, NE1 0LD</td>
-                                    <td>20/11/1988</td>
+                                    <td>9 Hotspur street, Townford</td>
+                                    <td>NE1 0LD</td>
+                                    <td>20/11/88</td>
                                     <td><a href="tabs-right-linked">Link</a></td>
-
                                 </tr>
                                 <tr>
                                     <td><a href="tabs-right">523456789</a></td>
                                     <td>Joe Bloggs</td> 
-                                    <td>17 Trump street, Townford, NE1 5LD</td>
-                                    <td>20/11/1988</td>
+                                    <td>17 Trump street, Townford</td>
+                                    <td>NE1 5LD</td>
+                                    <td>20/11/88</td>
                                     <td><a href="">Link</a></td>
-
                                 </tr>
                                                                     <tr>
                                     <td><a href="tabs-right">623456789</a></td>
                                     <td>Laura Hartford</td> 
-                                    <td>9 Hotspur street, Townford, NE1 5LD</td>
-                                    <td>20/11/1988</td>
+                                    <td>9 Hotspur street, Townford</td>
+                                    <td>NE1 0LD</td>
+                                    <td>20/11/88</td>
                                     <td><a href="">Link</a></td>
-
                                 </tr>
                                 </tbody>
                             </table>
                             </div>
+
                         </div>
                     </div>
                 </div>                                
