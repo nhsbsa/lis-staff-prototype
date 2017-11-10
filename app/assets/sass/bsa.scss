@@ -1068,7 +1068,7 @@ table th, table td {
 }
 
 .makeScrollable{
-    height: 375px;
+    height: 443px;
     overflow-y: scroll;
     overflow-x: hidden;
 }
@@ -1078,3 +1078,11 @@ table th, table td {
     overflow-y: scroll;
 }
 
+#select-box{
+    background: #005EB8;
+    color: white;
+    border: none;
+    height: 40px;
+    width: 78px;
+    font-size: medium;
+}

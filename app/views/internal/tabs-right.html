@@ -14,10 +14,24 @@
               <a class="menu-button" href="results">Back to search</a>
             </li>
             <li>
-              <a class="menu-button">Close</a>
+            <div class="form-group">
+              <select class="form-control" id="select-box" name="select-box" onchange="location = this.value;">
+                <option selected hidden>Close</option>
+                <option value="results">Incorrect personal details</option>
+                  <option value="results">Incorrect address</option>
+                <option value="results">Deceased</option>
+              </select>
+            </div>
             </li>
             <li>
-                <a class="menu-button">Hold</a>
+            <div class="form-group">
+              <select class="form-control" id="select-box" name="select-box" onchange="location = this.value;">
+                <option selected hidden>Hold</option>
+                <option value="results">1 Day</option>
+                  <option value="results">7 Days</option>
+                <option value="results">14 Days</option>
+              </select>
+            </div>
             </li>
           </ul>
         </div>
@@ -65,7 +79,7 @@
                         <p>No</p>
                         <h2 class="heading-small">DWP</h2>
                         <p>No</p>
-                        <a href="#">View Prescription</a>
+                        <p><a href="#">View Prescription</a></p>
                     </div>
                 </div>
             </div>
@@ -89,16 +103,16 @@
                     <div class="column-one-half">
                         <h2 class="heading-small">D.O.B</h2>
                         <p class="change-spacep">20/11/1988</p>
-                    <p class="change-spacea"><a href="#">Change</a></p>
+                        <p class="change-spacea"><a href="#">Change</a></p>
                         <h2 class="heading-small">NHS No.</h2>
                         <p class="change-spacep">20111988</p>
-                    <p class="change-spacea"><a href="#">Change</a></p>
+                        <p class="change-spacea"><a href="#">Change</a></p>
                         <h2 class="heading-small">Email</h2>
                         <input class="form-control" id="reference-number" name="first-name-2" type="text">
-                    <p class="change-spacea"><a href="#">Add</a></p>
+                        <p class="change-spacea"><a href="#">Add</a></p>
                         <h2 class="heading-small">Tel</h2>
-         <input class="form-control" id="reference-number" name="first-name-2" type="text">
-                    <p class="change-spacea"><a href="#">Add</a></p>
+                        <input class="form-control" id="reference-number" name="first-name-2" type="text">
+                        <p class="change-spacea"><a href="#">Add</a></p>
                     </div>
                 </div>
             </div>
@@ -139,6 +153,7 @@
                                 </tbody>
                             </table>
                             </div>
+                            <p><a href="#">+ Add transaction</a></p>
                         </div>
                         <div id="tab-2" class="tab-content">    
                             <div class="makeScrollable">
@@ -187,14 +202,12 @@
                                 </tbody>
                                     
                             </table>
-    </div>
-                            <a href="#">+ Add note</a>
+                            </div>
+                            <p><a href="#">+ Add note</a></p>
                                 
                             <br>
                         </div>
                         <div id="tab-3" class="tab-content">
-                            
-                            <h3 class="heading-small">Matches</h3>
                             <div class="makeScrollable">
                           <table class="internal-table">
                               <thead>
@@ -229,8 +242,6 @@
                             </div>
                         </div>
                                                 <div id="tab-4" class="tab-content">
-                            
-                            <h3 class="heading-small">Matches</h3>
                             <div class="makeScrollable">
                           <table class="internal-table">
                                 <thead>
