@@ -87,13 +87,9 @@ $(document).ready(function(){
         $('html').unbind('click');
       });
     });
-    
-    
   });
-  
-
- 
-  
 });
+    
+    
   
 })
