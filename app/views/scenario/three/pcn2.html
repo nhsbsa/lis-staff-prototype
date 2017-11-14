@@ -13,6 +13,26 @@
             <li>
               <a class="menu-button" href="results">Back to search</a>
             </li>
+            <li>
+            <div class="form-group">
+              <select class="form-control" id="select-box" name="select-box" onchange="location = this.value;">
+                <option selected hidden>Close</option>
+                <option value="results">Incorrect personal details</option>
+                  <option value="results">Incorrect address</option>
+                <option value="results">Deceased</option>
+              </select>
+            </div>
+            </li>
+            <li>
+            <div class="form-group">
+              <select class="form-control" id="select-box" name="select-box" onchange="location = this.value;">
+                <option selected hidden>Hold</option>
+                <option value="results">1 Day</option>
+                  <option value="results">7 Days</option>
+                <option value="results">14 Days</option>
+              </select>
+            </div>
+            </li>
           </ul>
         </div>
         <div class="column-half" id="logout">
@@ -31,7 +51,7 @@
         <div class="column-full">
             <div class="column-one-third lpads det-width">
                 <div class="grid-row highlight">
-                    <h1 class="heading-small">PCN 323456789</h1>
+                    <h1 class="heading-small">PCN 623456789</h1>
                     <div class="column-one-half lpads">
                         <h2 class="heading-small">Prescription</h2>
                         <p>£8.60</p>
@@ -40,9 +60,9 @@
                         <h2 class="heading-small">Surcharge</h2>
                         <p>£0</p>
                         <h2 class="heading-small">Paid</h2>
-                        <p>£58.60</p>
+                        <p>£9.80</p>
                         <h2 class="heading-small">Balance</h2>
-                        <p>£0</p>
+                        <p>£49</p>
                         <h2 class="heading-small">Sent</h2>
                         <p>12/10/2017</p>
                         <h2 class="heading-small">Respond</h2>
@@ -71,21 +91,21 @@
                         <p class="change-spacep">Mr</p>
                         <p class="change-spacea"><a href="#">Change</a></p>
                         <h2 class="heading-small">Forename</h2>
-                        <p class="change-spacep">Joe</p>
+                        <p class="change-spacep">Gordon J</p>
                         <p class="change-spacea"><a href="#">Change</a></p>
                         <h2 class="heading-small">Surname</h2>
-                        <p class="change-spacep">Bloggs</p>
+                        <p class="change-spacep">Robinson</p>
                         <p class="change-spacea"><a href="#">Change</a></p>
                         <h2 class="heading-small">Address</h2>
-                        <p class="change-spacep">30 Forest Rd, Northallerton, DL6 1JZ</p>
+                        <p class="change-spacep">43 Saxby Dr, Syston, Leicester LE7 2HH</p>
                         <p class="change-spacea"><a href="#">Change</a></p>
                     </div>
                     <div class="column-one-half">
                         <h2 class="heading-small">D.O.B</h2>
-                        <p class="change-spacep">02/03/1975</p>
+                        <p class="change-spacep">01/06/1985</p>
                         <p class="change-spacea"><a href="#">Change</a></p>
                         <h2 class="heading-small">NHS No.</h2>
-                        <p class="change-spacep">19750302</p>
+                        <p class="change-spacep"><br></p>
                         <p class="change-spacea"><a href="#">Change</a></p>
                         <h2 class="heading-small">Email</h2>
                         <input class="form-control" id="reference-number" name="first-name-2" type="text">
@@ -148,16 +168,12 @@
                                 
                                 <tbody>
                                     <div>
-                              <tr>
-                                <td>08/11/2017 13.00</td>
-                                <td>Tim</td> 
-                                <td>Cust wife phoned on behalf, awaiting permission from cust. Warned her of surcharge deadline</td>
+                                                                            <tr>
+                                <td>18/10/2017 16.45</td>
+                                <td>Paula</td> 
+                                <td>Cust agreed to payment plan</td>
                               </tr>
                             <tr>
-                                <td>08/11/2017 17.30</td>
-                                <td>Joanne</td> 
-                                <td>cust was called back, no response</td>
-                              </tr>
                                         </div>
                                 </tbody>
                                     
@@ -181,22 +197,7 @@
                                 </tr>
                             </thead>
                               <tbody>
-                                                                  <tr>
-                                    <td><a href="pcn">123456789</a></td>
-                                    <td>12/10/2017</td> 
-                                    <td>09/11/2017</td>
-                                    <td>£108.60</td>
-                                    <td>Open</td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td><a href="pcn1">223456789</a></td>
-                                    <td>07/09/17</td> 
-                                    <td>05/10/17</td>
-                                    <td>£108.60</td>
-                                    <td>Open</td>
-                                    <td></td>
-                                </tr>
+
                                   </tbody>
                             </table>
                             </div>
@@ -210,12 +211,35 @@
                                     <th>Name</th> 
                                     <th>Address</th>
                                     <th>Postcode</th>
-                                    <th>D.O.B</th>
+<!--                                    <th>D.O.B</th>-->
                                     <th></th>
                                 </tr>
                                 </thead>
                                 <tbody>
-
+                                                                    <tr>
+                                    <td><a href="pcn">423456789</a></td>
+                                    <td>Gordon Robinson</td> 
+                                    <td>43 Saxby Dr, Syston, Leicester</td>
+                                    <td>LE7 2HH</td>
+<!--                                    <td>01/06/85</td>-->
+                                    <td><a href="">Link</a></td>
+                                </tr>
+                                                                    <tr>
+                                    <td><a href="pcn1">523456789</a></td>
+                                    <td>Gordon Robinson</td> 
+                                    <td>7 Stapleton Ln, Kirkby Mallory, Leicester</td>
+                                    <td>LE7 7QJ</td>
+<!--                                    <td>01/06/85</td>-->
+                                    <td><a href="tabs-right-linked">Link</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="pcn3">73456789</a></td>
+                                    <td>Gordyn Robin</td> 
+                                    <td>1 Cygnet Cl, Syston, Leicester</td>
+                                    <td>LE7 1YF</td>
+<!--                                    <td>01/06/85</td>-->
+                                    <td><a href="">Link</a></td>
+                                </tr>
                                 </tbody>
                             </table>
                             </div>
