@@ -1289,6 +1289,11 @@ table th, table td {
     overflow-y: scroll;
 }
 
+.makeScrollable2{
+    height: 240px;
+    overflow-y: scroll;
+}
+
 #select-box{
     background: #005EB8;
     color: white;
@@ -1296,5 +1301,10 @@ table th, table td {
     height: 40px;
     width: 78px;
     font-size: medium;
+}
+
+select > option {
+   background: #DEE0E2;
+    color: black;
 }
 
