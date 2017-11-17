@@ -18,27 +18,6 @@ $(document).ready(function () {
   // to toggle hidden content
   var showHideContent = new GOVUK.ShowHideContent()
   showHideContent.init()
-  
-  if(document.getElementById('hasmail')) {
-    var hasMail = document.getElementById('hasmail').innerHTML;
-    var mailAddress = document.getElementById('mailaddress');
-    if(hasMail == "No") {
-      mailAddress.style.display = 'none';
-    }
-  }
-  
-  // DONE - The email needs to be removed when the user doesnt have one
-  
-  if (document.getElementById('usermail')) {
-    var hasMail = document.getElementById('usermail').innerHTML;
-    var email = document.getElementById('email');
-    if (hasmail == "true") {
-      email.style.display = 'block';
-    } else {
-      email.style.display = 'none';
-    }
-  }
-    
     
     $('.header').click(function(){
      $(this).toggleClass('expand').nextUntil('tr.header').slideToggle(100);
@@ -58,6 +37,20 @@ $(document).ready(function(){
 
 })
     
+    $(document).ready(function(){
+	
+	$('ul.tabs1 li').click(function(){
+		var tab_id = $(this).attr('data-tab1');
+
+		$('ul.tabs1 li').removeClass('current1');
+		$('.tab1-content').removeClass('current1');
+
+		$(this).addClass('current1');
+		$("#"+tab_id).addClass('current1');
+	})
+
+})
+    
     $(document).ready(function() {
 
     $('.internal-table tr').click(function() {
@@ -68,28 +61,7 @@ $(document).ready(function(){
     });
 
 });
-    
-    $(function(){
-  
-  $('li.dropdown > a').on('click',function(event){
-    
-    event.preventDefault()
-    
-    $(this).parent().find('ul').first().toggle(300);
-    
-    $(this).parent().siblings().find('ul').hide(200);
-    
-    //Hide menu when clicked outside
-    $(this).parent().find('ul').mouseleave(function(){  
-      var thisUI = $(this);
-      $('html').click(function(){
-        thisUI.hide();
-        $('html').unbind('click');
-      });
-    });
-  });
-});
-    
+
     
   
 })
