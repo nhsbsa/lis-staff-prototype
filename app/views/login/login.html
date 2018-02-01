@@ -1,0 +1,106 @@
+{% extends "layout_bsa_internal.html" %}
+
+{% block page_title %}
+  Single User View
+{% endblock %}
+
+{% block after_header %}
+  <div id="menu">
+    <div id="menu-content">
+      <div class="grid-row">
+        <div class="column-half">
+          <ul>
+            <li>
+              <a class="menu-button" id="select-box" href="results">Back to search</a>
+            </li>
+            <li>
+              <a class="menu-button" id="select-box" href="results">Reports</a>
+            </li>
+            <li>
+            <div class="form-group">
+              <select class="form-control" id="select-box" name="select-box" onchange="location = this.value;">
+                <option selected hidden>Close</option>
+                  <div>
+                <option value="results">Incorrect forename</option>
+                  <option value="results">Incorrect surname</option>
+                <option value="results">Incorrect address</option>
+                      <option value="results">Incorrect post code</option>
+                      <option value="results">Incorrect date of birth</option>
+                      <option value="results">Mismatched exemption category</option>
+                      <option value="results">Dead letter</option>
+                      <option value="results">Letter returned</option>
+                      <option value="results">Patient paid</option>
+                      <option value="results">Keying error</option>
+                      <option value="results">Patient deceased</option>
+                      <option value="results">MEDEX/MATEX Ex Gratia payment processed</option>
+                      <option value="results">Refund processed</option>
+                      <option value="results">Exemption confirmed</option>
+                      <option value="results">Full payment recieved</option>
+                    </div>
+              </select>
+            </div>
+            </li>
+            <li>
+            <div class="form-group">
+              <select class="form-control" id="select-box" name="select-box" onchange="location = this.value;">
+                <option selected hidden>Hold</option>
+                <option value="results">14 Days</option>
+                  <option value="results">28 Days</option>
+                <option value="results">30 Days</option>
+                                  <option value="results">60 Days</option>
+                                  <option value="results">90 Days</option>
+              </select>
+            </div>
+            </li>
+          </ul>
+        </div>
+        <div class="column-half" id="logout">
+          <a href="#">Log out</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}
+
+{% block content %}
+<style>
+    input.form-control{
+        width:33.3%;
+    }
+</style>
+
+<main id="content" role="main">
+
+    <div class="grid-row">
+      <div class="column-two-thirds">
+
+        <div class="heading-group">
+          <h1 class="heading-large">Sign in</h1>
+        </div>
+        <p>Use your NHSBSA details to sign in. You received these by phone, when your account was created.</p>
+
+
+        <div class="form-group">
+          <label class="form-label-bold" for="first-name-2">Username</label> 
+           <input class="form-control" id="first-name-2" name="first-name-2" type="text">
+        </div>
+        <div class="form-group">
+          <label class="form-label-bold" for="last-name-2">Password</label> <input class="form-control" id="last-name-2" name="last-name-2" type="text">
+        </div>
+
+        <details>
+          <summary>
+            <span class="summary">Forgotten your password?</span>
+          </summary>
+          <div class="panel panel-border-narrow">
+            <p>If you’re you've forgotten your password, you should contact the Service Desk on 0870 010 3241.</p>
+          </div>
+        </details>
+        <br>
+        <p><a class="button" href="hub_r3" id="next">Sign in</a></p>
+      </div>
+    </div>
+</main>
+
+{% endblock %}
