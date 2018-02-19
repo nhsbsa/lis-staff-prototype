@@ -1,0 +1,451 @@
+{% extends "layout_bsa_internal.html" %}
+
+{% block page_title %}
+  Single User View
+{% endblock %}
+
+
+
+
+
+{% block after_header %}
+
+<style>
+    .toggle {
+    float:right;
+    text-decoration: underline;
+    color: #005ea5;
+}
+    .link-back {
+  display: -moz-inline-stack;
+  display: inline-block;
+  position: relative;
+  font-family: Arial, sans-serif;
+  font-weight: 400;
+  text-transform: none;
+  font-size: 14px;
+  line-height: 1.14286;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding-left: 14px;
+  text-decoration: none;
+      border-bottom: 1px solid #005ea5
+}
+
+@media (min-width: 641px) {
+  .link-back {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+}
+
+.link-back:link, .link-back:visited, .link-back:hover, .link-back:active {
+  color: #005ea5;
+}
+
+.link-back::before {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-top: 5px solid transparent;
+  border-right: 6px solid #005ea5;
+  border-bottom: 5px solid transparent;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  margin-top: -6px;
+}
+
+input.submit {
+  margin-left:-6.5px; 
+    width: 36px;
+    height: 38px;
+    border: 1px solid #005ea5;
+    border-width: 0 0 0 1px;
+    border-left-color: #222;
+    border-radius: 0;
+    overflow: hidden;
+    text-indent: -5000px;
+    color: #fff;
+    background-color: #005ea5;
+    background-image: url(https://assets.publishing.service.gov.uk/static/search-button-ca89b2a79f944909ceb7370d3f0b78811d32b96e883348fcd8886f63dd619585.png);
+    background-repeat: no-repeat;
+   background-position: 0%;
+}
+.panel {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    clear: both;
+    border-left-style: solid;
+    border-color: #0072CE;
+    margin-bottom: 0.78947em;
+    padding: 0.7em;
+}
+</style>
+  <div id="menu">
+    <div id="menu-content">
+      <div class="grid-row">
+        <div class="column-full" style="padding-left:30px">
+          <ul>
+          <li style="font-weight:700; font-size: 24px; padding-right:1em">CRS 1234567</li>
+<!--             <li>
+              <a class="menu-button" id="select-box" href="results">Back to search</a>
+            </li> -->
+<!--             <li>
+              <a class="menu-button" id="select-box" href="results">Reports</a>
+            </li> -->
+            <li>
+            <div class="form-group">
+                                <select class="form-control" id="select-box" name="select-box" onchange="location = this.value;"" style="width:200px">
+                                    <option hidden="" selected>
+                                        Case accepted
+                                    </option>
+                                    <option value="results">
+                                        No further action, insufficient information
+                                    </option>
+                                     <option value="results">
+                                        No further action, claim withdrawn
+                                    </option>
+                                    <option value="results">
+                                        Pending Claim Returned (eg AG1)
+                                    </option>
+                                    <option value="results">
+                                        Pending, more info (FIL stage 1)
+                                    </option>
+                                    <option value="results">
+                                        Pending, Internal Referal
+                                    </option>
+                                    <option value="results">
+                                        Waiting in print queue
+                                    </option>
+
+
+                                </select>
+                            </div>
+                        </li>
+<!--                         <li>
+                            <div class="form-group">
+                                <select class="form-control" id="select-box" name="select-box" onchange="location = this.value;">
+                                    <option hidden="" selected>
+                                        Hold
+                                    </option>
+                                    <option value="results">
+                                        14 Days
+                                    </option>
+                                    <option value="results">
+                                        28 Days
+                                    </option>
+                                    <option value="results">
+                                        30 Days
+                                    </option>
+                                    <option value="results">
+                                        60 Days
+                                    </option>
+                                    <option value="results">
+                                        90 Days
+                                    </option>
+                                </select>
+                            </div>
+                        </li> -->
+                        <li style="float:right">
+                            <div class="form-group">
+                                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                                    <input class="form-control" id="full-name-f2" name="full-name-f2" placeholder="Search" style="width:85%; padding: 5px 4px 4px; border: 2px solid #0b0c0c;font-size: 19px; line-height: 1.31579; height: 37px; margin:2px 0px 2px 0px;" type="text"> <input class="submit" style=" margin-left:-6.5px; width: 36px; height: 37px; border: 1px solid #005ea5; border-width: 0 0 0 1px; border-left-color: #222; border-radius: 0; overflow: hidden; text-indent: -5000px; color: #fff; background-color: #005ea5; background-image: url(https://assets.publishing.service.gov.uk/static/search-button-ca89b2a79f944909ceb7370d3f0b78811d32b96e883348fcd8886f63dd619585.png); background-repeat: no-repeat; background-position: 0%; padding-top:4px; padding-bottom:1px" type="submit" value="Search">
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div><!--         <div class="column-half" id="logout">
+          <a href="#">Log out</a>
+        </div> -->
+            </div>
+        </div>
+    </div>{% endblock %} {% block content %}
+    <main id="content" role="main">
+        <br>
+        <div class="grid-row" style="margin-top:0.3em">
+            <div class="column-one-quarter">
+                <a class="link-back" href="javascript:history.go(-1)" style="margin: 0.26316em 0em 1.05263em 1em">Back to cases</a>
+            </div>
+            <div class="column-half" style="padding-left:20px">
+                <h2 class="heading-large" style="margin-top:0px; color:#003087">Shiela Green <span class="heading-medium" style="color:black">k5g v78</span></h2>
+            </div>
+            <div class="column-one-quarter"></div>
+            <div class="column-one-quarter"></div>
+        </div>
+        <div class="grid-row">
+            <div class="column-one-quarter">
+                <div class="grid-row highlight1" style="margin-top:0px">
+                    <!--                        <h2 class="heading-medium" style="margin-top:0.5em">Shiela Green</h2> -->
+                    <h3 class="heading-small" style="margin-bottom: 0px">Address</h3>
+                    <p class="change-spacep">9 Hotspur street,<br>
+                    Townford,<br>
+                    NE1 0LD</p>
+                    <h3 class="heading-small" style="margin-bottom: 0px">Date of birth</h3>
+                    <p class="change-spacep">02/04/1945 (Age 73)</p>
+                    <h3 class="heading-small" style="margin-bottom: 0px">Telephone</h3>
+                    <p class="change-spacep">0191 268 1234</p><!--                         <div class="panel panel-border-wide" style="border-color: #0072CE;
+    padding:0.26316em 0em 0em 0.7em; margin-top: 0.26316em">
+                        
+
+
+  <p>
+    Text relay service needed
+  </p>
+</div>  -->
+                    <div class="notice" style="margin-top:0.5em">
+                        <i class="icon icon-information" style="margin-top: -15px"><span class="visually-hidden">Warning</span></i> <strong style="font-size: 16px; padding-left:50px; font-weight:700; color:#0072CE">Text relay service needed</strong>
+                    </div>
+                    <h3 class="heading-small" style="margin-bottom: 0px">Email</h3>
+                    <p class="change-spacep" style="margin-bottom: 1.05263em">Shielagreen@gmail.com</p><!--                         <p style="margin-top: 1.05263em">User <span class="bold">cannot</span> be contact for research</p> -->
+                </div><br>
+                <div class="grid-row highlight1" style="margin-top:0px; min-height:0px">
+                    <!--                        <h2 class="heading-medium" style="margin-top:0.5em">Shiela Green</h2> -->
+                    <h3 class="heading-medium" style="margin: 0.3em 0em 0em 0em">Third party contact</h3>
+                    <h3 class="heading-small" style="margin-bottom: 0px">Name</h3>
+                    <p class="change-spacep">Andrew Green</p>
+                    <h3 class="heading-small" style="margin-bottom: 0px">Telephone</h3>
+                    <p class="change-spacep" style="margin-bottom: 1.05263em">07729 100 000</p>
+                </div>
+            </div>
+            <div class="column-half" style="padding-left:20px">
+                <textarea class="form-control form-control-3-4" name="textarea" placeholder="Notes about this case" rows="5" style="height: 150px; width:100%"></textarea> <a href="" style="float:right">+ add note</a><br>
+                <br>
+                <div class="column-full" style="padding:0px">
+                    <div class="container rpads">
+                        <ul class="tabs rpads">
+                            <li class="tab-link current" data-tab="tab-3">Income</li>
+                            <li class="tab-link" data-tab="tab-4">Capital</li>
+                            <li class="tab-link" data-tab="tab-5">Housing costs</li>
+                            <li class="tab-link" data-tab="tab-6">Others living in home</li>
+                        </ul>
+                        <div class="tab-content current" id="tab-3">
+                            <div class="makeScrollable2">
+                                <table class="internal-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Reference</th>
+                                            <th>Sent</th>
+                                            <th>Respond</th>
+                                            <th>Balance</th>
+                                            <th>Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <a href="#">223456789</a>
+                                            </td>
+                                            <td>28/5/17</td>
+                                            <td>28/6/17</td>
+                                            <td>£108.60</td>
+                                            <td>Open</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <a href="#">323456789</a>
+                                            </td>
+                                            <td>28/4/17</td>
+                                            <td>28/5/17</td>
+                                            <td>£108.60</td>
+                                            <td>Open</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="tab-content" id="tab-4">
+                            <div class="makeScrollable2">
+                                <table class="internal-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Reference</th>
+                                            <th>Name</th>
+                                            <th>Address</th>
+                                            <th>Postcode</th>
+                                            <th>Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <a href="#">823456789</a>
+                                            </td>
+                                            <td>Joe Bloggs</td>
+                                            <td>9 Hotspur street, Townford</td>
+                                            <td>NE1 0LD</td>
+                                            <td>Open</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <a href="#">423456789</a>
+                                            </td>
+                                            <td>Joe J Bloggs</td>
+                                            <td>9 Hotspur street, Townford</td>
+                                            <td>NE1 0LD</td>
+                                            <td>Open</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <a href="#">523456789</a>
+                                            </td>
+                                            <td>Joe Bloggs</td>
+                                            <td>17 Trump street, Townford</td>
+                                            <td>NE1 5LD</td>
+                                            <td>Open</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <a href="#">623456789</a>
+                                            </td>
+                                            <td>Laura Hartford</td>
+                                            <td>9 Hotspur street, Townford</td>
+                                            <td>NE1 0LD</td>
+                                            <td>Open</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="tab-content" id="tab-5">
+                        <div style="float:right">
+                        <button class="btn1" style="padding:1em">Hide</button>
+<button class="btn2" style="padding:1em">Show</button>
+</div>
+                     <br>
+        
+                            <div class="">
+                                <table class="internal-table">
+                                    <tr></tr>
+                                    <tbody>
+                                        <tr>
+                                            <td>Type of property</td>
+                                            <td class="bold">Rented accommodation</td>
+                                        </tr>
+                                        <tr class="tog">
+                                            <td>Getting housing benefit</td>
+                                            <td class="bold">Yes</td>
+                                        </tr>
+                                        <tr class="tog">
+                                            <td>How much rent is paid by housing benefit</td>
+                                            <td class="bold">Some</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>Rent amount after housing benefit</td>
+                                            <td class="bold">£220.20</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Rent frequency</td>
+                                            <td class="bold">Monthly</td>
+                                        </tr>
+
+
+
+                              
+                                        <tr class="tog">
+                                            <td>Are meals or energy bills included in your rent?</td>
+                                            <td class="bold">No</td>
+                                        </tr>
+       
+                                        <tr class="tog">
+                                            <td>Do you pay service charges?</td>
+                                            <td class="bold">No</td>
+                                        </tr>
+
+                                        <p>
+                                        <tr class="tog">
+                                            <td>Do you pay ground rent?</td>
+                                            <td class="bold">No</td>
+                                        </tr>
+                                        </p>
+                                        <tr class="tog">
+                                            <td>Do you pay council tax?</td>
+                                            <td class="bold">Yes</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="border-bottom: none">Yearly council tax amount</td>
+                                            <td class="bold" style="border-bottom: none">£1626.12</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="tab-content" id="tab-6">
+                            <div class="makeScrollable2">
+                                <table class="internal-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Reference</th>
+                                            <th>Name</th>
+                                            <th>Address</th>
+                                            <th>Postcode</th>
+                                            <th>Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <a href="#">823456789</a>
+                                            </td>
+                                            <td>Joe Bloggs</td>
+                                            <td>9 Hotspur street, Townford</td>
+                                            <td>NE1 0LD</td>
+                                            <td>Open</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <a href="#">423456789</a>
+                                            </td>
+                                            <td>Joe J Bloggs</td>
+                                            <td>9 Hotspur street, Townford</td>
+                                            <td>NE1 0LD</td>
+                                            <td>Open</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <a href="#">523456789</a>
+                                            </td>
+                                            <td>Joe Bloggs</td>
+                                            <td>17 Trump street, Townford</td>
+                                            <td>NE1 5LD</td>
+                                            <td>Open</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <a href="#">623456789</a>
+                                            </td>
+                                            <td>Laura Hartford</td>
+                                            <td>9 Hotspur street, Townford</td>
+                                            <td>NE1 0LD</td>
+                                            <td>Open</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</main>
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $(".btn1").click(function(){
+        $(".tog").hide();
+    });
+    $(".btn2").click(function(){
+        $(".tog").show();
+    });
+});
+</script>
+
+
+
+{% endblock %}
