@@ -4,13 +4,48 @@
   Single User View
 {% endblock %}
 
-
-
-
-
 {% block after_header %}
 
 <style>
+.tabcontent {
+    display: none;
+    padding: 0px;
+    border: none ;
+    border-top: none;
+    }
+
+.tab2 {
+    overflow: hidden;
+    border: none;
+    background-color: none;
+}
+
+/* Style the buttons that are used to open the tab content */
+.tab2 button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 0.6em;
+    transition: 0.3s;
+}
+
+/* Change background color of buttons on hover */
+.tab2 button:hover {
+    background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab2 button.active {
+    background-color: #ccc;
+        border: 1px solid ;
+
+}
+
+.tablinks{
+font-size:16px;
+}
     .toggle {
     float:right;
     text-decoration: underline;
@@ -73,39 +108,52 @@ input.submit {
     background-repeat: no-repeat;
    background-position: 0%;
 }
-.panel {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    clear: both;
-    border-left-style: solid;
-    border-color: #0072CE;
-    margin-bottom: 0.78947em;
-    padding: 0.7em;
+
+.button-toggle{
+    float: right;
+    font-weight: 400;
+    text-transform: none;
+    font-size: 14px;
+    line-height: 1.1428571429;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: #005ea5;
+    text-decoration: underline;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+}
+.summary{
+    font-size: 16px;
+}
+.secondary-text{
+    color:#6F777B;
+    margin-bottom: 0em;
+}
+details{
+    margin-bottom:0.3em;
+}
+.internal-table td:nth-child(3) {
+    width: 50%;
 }
 </style>
-  <div id="menu">
-    <div id="menu-content">
-      <div class="grid-row">
-        <div class="column-full" style="padding-left:30px">
-          <ul>
-          <li style="font-weight:700; font-size: 24px; padding-right:1em">CRS 1234567</li>
-<!--             <li>
-              <a class="menu-button" id="select-box" href="results">Back to search</a>
-            </li> -->
-<!--             <li>
-              <a class="menu-button" id="select-box" href="results">Reports</a>
-            </li> -->
-            <li>
-            <div class="form-group">
-                                <select class="form-control" id="select-box" name="select-box" onchange="location = this.value;"" style="width:200px">
+
+<div id="menu">
+        <div id="menu-content">
+            <div class="grid-row">
+                <div class="column-full" style="padding-left:30px">
+                    <ul>
+                        <li style="font-weight:700; font-size: 24px; padding-right:1em">CRS 1234567</li>
+                        <li>
+                            <div class="form-group">
+                                <select class="form-control" id="select-box" name="select-box" onchange="location = this.value;" style="width:200px">
                                     <option hidden="" selected>
                                         Case accepted
                                     </option>
                                     <option value="results">
                                         No further action, insufficient information
                                     </option>
-                                     <option value="results">
+                                    <option value="results">
                                         No further action, claim withdrawn
                                     </option>
                                     <option value="results">
@@ -120,35 +168,9 @@ input.submit {
                                     <option value="results">
                                         Waiting in print queue
                                     </option>
-
-
                                 </select>
                             </div>
                         </li>
-<!--                         <li>
-                            <div class="form-group">
-                                <select class="form-control" id="select-box" name="select-box" onchange="location = this.value;">
-                                    <option hidden="" selected>
-                                        Hold
-                                    </option>
-                                    <option value="results">
-                                        14 Days
-                                    </option>
-                                    <option value="results">
-                                        28 Days
-                                    </option>
-                                    <option value="results">
-                                        30 Days
-                                    </option>
-                                    <option value="results">
-                                        60 Days
-                                    </option>
-                                    <option value="results">
-                                        90 Days
-                                    </option>
-                                </select>
-                            </div>
-                        </li> -->
                         <li style="float:right">
                             <div class="form-group">
                                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -157,12 +179,13 @@ input.submit {
                             </div>
                         </li>
                     </ul>
-                </div><!--         <div class="column-half" id="logout">
-          <a href="#">Log out</a>
-        </div> -->
+                </div>
             </div>
         </div>
-    </div>{% endblock %} {% block content %}
+    </div>
+    {% endblock %}
+
+    {% block content %}
     <main id="content" role="main">
         <br>
         <div class="grid-row" style="margin-top:0.3em">
@@ -178,7 +201,9 @@ input.submit {
         <div class="grid-row">
             <div class="column-one-quarter">
                 <div class="grid-row highlight1" style="margin-top:0px">
-                    <!--                        <h2 class="heading-medium" style="margin-top:0.5em">Shiela Green</h2> -->
+
+                    <h3 class="heading-small" style="margin-bottom: 0px">Date received</h3>
+                    <p class="change-spacep">01/01/2018</p>
                     <h3 class="heading-small" style="margin-bottom: 0px">Address</h3>
                     <p class="change-spacep">9 Hotspur street,<br>
                     Townford,<br>
@@ -186,23 +211,16 @@ input.submit {
                     <h3 class="heading-small" style="margin-bottom: 0px">Date of birth</h3>
                     <p class="change-spacep">02/04/1945 (Age 73)</p>
                     <h3 class="heading-small" style="margin-bottom: 0px">Telephone</h3>
-                    <p class="change-spacep">0191 268 1234</p><!--                         <div class="panel panel-border-wide" style="border-color: #0072CE;
-    padding:0.26316em 0em 0em 0.7em; margin-top: 0.26316em">
-                        
+                    <p class="change-spacep">0191 268 1234</p>
 
-
-  <p>
-    Text relay service needed
-  </p>
-</div>  -->
                     <div class="notice" style="margin-top:0.5em">
                         <i class="icon icon-information" style="margin-top: -15px"><span class="visually-hidden">Warning</span></i> <strong style="font-size: 16px; padding-left:50px; font-weight:700; color:#0072CE">Text relay service needed</strong>
                     </div>
                     <h3 class="heading-small" style="margin-bottom: 0px">Email</h3>
-                    <p class="change-spacep" style="margin-bottom: 1.05263em">Shielagreen@gmail.com</p><!--                         <p style="margin-top: 1.05263em">User <span class="bold">cannot</span> be contact for research</p> -->
+                    <p class="change-spacep" style="margin-bottom: 1.05263em">Shielagreen@gmail.com</p>
                 </div><br>
                 <div class="grid-row highlight1" style="margin-top:0px; min-height:0px">
-                    <!--                        <h2 class="heading-medium" style="margin-top:0.5em">Shiela Green</h2> -->
+   
                     <h3 class="heading-medium" style="margin: 0.3em 0em 0em 0em">Third party contact</h3>
                     <h3 class="heading-small" style="margin-bottom: 0px">Name</h3>
                     <p class="change-spacep">Andrew Green</p>
@@ -211,7 +229,40 @@ input.submit {
                 </div>
             </div>
             <div class="column-half" style="padding-left:20px">
-                <textarea class="form-control form-control-3-4" name="textarea" placeholder="Notes about this case" rows="5" style="height: 150px; width:100%"></textarea> <a href="" style="float:right">+ add note</a><br>
+                <div class="container rpads" style="border: 1px solid #bfc1c3;">
+                    <p style="padding:1em 1em 0em 1em"><a href="#" style="float:right">+ Add note</a></p>
+                    <div class="tab1-content current1" id="tab-2" style="padding: 1em;">
+                        <div class="makeScrollable1">
+                            <div></div>
+                            <table class="internal-table">
+                                <thead>
+                                    <tr>
+                                        <th>Date</th>
+                                        <th>Agent</th>
+                                        <th>Comments</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>08/01/2018 13.30</td>
+                                        <td>Tim</td>
+                                        <td>Email received with 4 most recent payslips.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>07/01/2017 13.00</td>
+                                        <td>Joanne</td>
+                                        <td>Cust rang to ask what evidence to send. Advice of last 4 payslips given.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>06/01/2018 09.03</td>
+                                        <td>Tim</td>
+                                        <td>Cust sent in P45. Rang to clarify income from work. Sent email to request payslip.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
                 <br>
                 <div class="column-full" style="padding:0px">
                     <div class="container rpads">
@@ -219,120 +270,152 @@ input.submit {
                             <li class="tab-link current" data-tab="tab-3">Income</li>
                             <li class="tab-link" data-tab="tab-4">Capital</li>
                             <li class="tab-link" data-tab="tab-5">Housing costs</li>
-                            <li class="tab-link" data-tab="tab-6">Others living in home</li>
+                            <li class="tab-link" data-tab="tab-6">Others living in home</li>                            
                         </ul>
-                        <div class="tab-content current" id="tab-3">
-                            <div class="makeScrollable2">
-                                <table class="internal-table">
-                                    <thead>
-                                        <tr>
-                                            <th>Reference</th>
-                                            <th>Sent</th>
-                                            <th>Respond</th>
-                                            <th>Balance</th>
-                                            <th>Status</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>
-                                                <a href="#">223456789</a>
-                                            </td>
-                                            <td>28/5/17</td>
-                                            <td>28/6/17</td>
-                                            <td>£108.60</td>
-                                            <td>Open</td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <a href="#">323456789</a>
-                                            </td>
-                                            <td>28/4/17</td>
-                                            <td>28/5/17</td>
-                                            <td>£108.60</td>
-                                            <td>Open</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                        <div class="tab-content current" id="tab-3" style="margin:0px">
+                            <br>
+                            <div class="tab2" style="border-bottom: 1px solid #bfc1c3; padding-bottom: 0.8em">
+                                <button class="tablinks" onclick="openCity(event, 'Newyork')">Pensions</button>
+                                <button class="tablinks" onclick="openCity(event, 'London')" style="margin-left:0.5em">Benefits</button>
+                                <button class="tablinks" onclick="openCity(event, 'Paris')" style="margin-left:0.5em">Jobs</button>
+                            </div>
+
+                            <!-- Tab content -->
+                            <div class="tabcontent" id="Newyork">
+                                <button class="button-toggle" id="toggle">Show yes and no answers</button>
+                                    <table class="internal-table">
+                                        <tbody>
+                                            <tr class="target" style="display:none;">
+                                                <td>Get a State Pension</td>
+                                                <td class="bold">Yes</td>
+                                            </tr>
+                                            <tr>
+                                                <td>State Pension amount</td>
+                                                <td class="bold">£122.30</td>
+                                            </tr>
+                                            <tr>
+                                                <td>State Pension frequency</td>
+                                                <td class="bold">Paid every 4 weeks</td>
+                                            </tr>
+                                                   </tbody>
+                                    </table><BR>
+                                       <table class="internal-table">
+                                        <tbody>
+                                            <tr class="target" style="display:none;">
+                                                <td>Get another pension</td>
+                                                <td class="bold">Yes</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Private or Workplace pension</td>
+                                                <td class="bold">NHS</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Pension amount</td>
+                                                <td class="bold">£68.20</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Pension frequency</td>
+                                                <td class="bold">Paid every month</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div class="tabcontent" id="London">
+                                <button class="button-toggle" id="toggle">Show yes and no answers</button>
+                                    <table class="internal-table">
+                                        <tbody>
+                                            <tr class="target" style="display:none;">
+                                                <td>Get a State Pension</td>
+                                                <td class="bold">Yes</td>
+                                            </tr>
+                                            <tr>
+                                                <td>State Pension amount</td>
+                                                <td class="bold">£122.30</td>
+                                            </tr>
+                                            <tr>
+                                                <td>State Pension frequency</td>
+                                                <td class="bold">Paid every 4 weeks</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div class="tabcontent" id="Paris">
+                                <button class="button-toggle" id="toggle">Show yes and no answers</button>
+                                    <table class="internal-table">
+                                        <tbody>
+                                            <tr class="target" style="display:none;">
+                                                <td>Get a State Pension</td>
+                                                <td class="bold">Yes</td>
+                                            </tr>
+                                            <tr>
+                                                <td>State Pension amount</td>
+                                                <td class="bold">£122.30</td>
+                                            </tr>
+                                            <tr>
+                                                <td>State Pension frequency</td>
+                                                <td class="bold">Paid every 4 weeks</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div class="tabcontent" id="Tokyo">
+                                <button class="button-toggle" id="toggle">Show yes and no answers</button>
+                                    <table class="internal-table">
+                                        <tbody>
+                                            <tr class="target" style="display:none;">
+                                                <td>Get a State Pension</td>
+                                                <td class="bold">Yes</td>
+                                            </tr>
+                                            <tr>
+                                                <td>State Pension amount</td>
+                                                <td class="bold">£122.30</td>
+                                            </tr>
+                                            <tr>
+                                                <td>State Pension frequency</td>
+                                                <td class="bold">Paid every 4 weeks</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div class="tabcontent" id="Paris">
+                                <button class="button-toggle" id="toggle">Show yes and no answers</button>
+                                    <table class="internal-table">
+                                        <tbody>
+                                            <tr class="target" style="display:none;">
+                                                <td>Get a State Pension</td>
+                                                <td class="bold">Yes</td>
+                                            </tr>
+                                            <tr>
+                                                <td>State Pension amount</td>
+                                                <td class="bold">£122.30</td>
+                                            </tr>
+                                            <tr>
+                                                <td>State Pension frequency</td>
+                                                <td class="bold">Paid every 4 weeks</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
                             </div>
                         </div>
                         <div class="tab-content" id="tab-4">
-                            <div class="makeScrollable2">
+                            <button class="button-toggle" id="toggle">Show yes and no answers</button>
                                 <table class="internal-table">
-                                    <thead>
-                                        <tr>
-                                            <th>Reference</th>
-                                            <th>Name</th>
-                                            <th>Address</th>
-                                            <th>Postcode</th>
-                                            <th>Status</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>
-                                                <a href="#">823456789</a>
-                                            </td>
-                                            <td>Joe Bloggs</td>
-                                            <td>9 Hotspur street, Townford</td>
-                                            <td>NE1 0LD</td>
-                                            <td>Open</td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <a href="#">423456789</a>
-                                            </td>
-                                            <td>Joe J Bloggs</td>
-                                            <td>9 Hotspur street, Townford</td>
-                                            <td>NE1 0LD</td>
-                                            <td>Open</td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <a href="#">523456789</a>
-                                            </td>
-                                            <td>Joe Bloggs</td>
-                                            <td>17 Trump street, Townford</td>
-                                            <td>NE1 5LD</td>
-                                            <td>Open</td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <a href="#">623456789</a>
-                                            </td>
-                                            <td>Laura Hartford</td>
-                                            <td>9 Hotspur street, Townford</td>
-                                            <td>NE1 0LD</td>
-                                            <td>Open</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                        <div class="tab-content" id="tab-5">
-                        <div style="float:right">
-                        <button class="btn1" style="padding:1em">Hide</button>
-<button class="btn2" style="padding:1em">Show</button>
-</div>
-                     <br>
-        
-                            <div class="">
-                                <table class="internal-table">
-                                    <tr></tr>
+                                    <tr>
+                                        <td></td>
+                                    </tr>
                                     <tbody>
                                         <tr>
                                             <td>Type of property</td>
                                             <td class="bold">Rented accommodation</td>
-                                        </tr>
-                                        <tr class="tog">
+                                        </tr>                                               <
+                                        <tr class="target" style="display:none;">
                                             <td>Getting housing benefit</td>
                                             <td class="bold">Yes</td>
                                         </tr>
-                                        <tr class="tog">
+                                        <tr class="target" style="display:none;">
                                             <td>How much rent is paid by housing benefit</td>
                                             <td class="bold">Some</td>
                                         </tr>
-
                                         <tr>
                                             <td>Rent amount after housing benefit</td>
                                             <td class="bold">£220.20</td>
@@ -341,27 +424,123 @@ input.submit {
                                             <td>Rent frequency</td>
                                             <td class="bold">Monthly</td>
                                         </tr>
-
-
-
-                              
-                                        <tr class="tog">
+                                        <tr class="target" style="display:none;">
                                             <td>Are meals or energy bills included in your rent?</td>
                                             <td class="bold">No</td>
                                         </tr>
-       
-                                        <tr class="tog">
+                                        <tr class="target" style="display:none;">
                                             <td>Do you pay service charges?</td>
                                             <td class="bold">No</td>
                                         </tr>
-
-                                        <p>
-                                        <tr class="tog">
+                                        <tr class="target" style="display:none;">
                                             <td>Do you pay ground rent?</td>
                                             <td class="bold">No</td>
                                         </tr>
-                                        </p>
-                                        <tr class="tog">
+                                        <tr class="target" style="display:none;">
+                                            <td>Do you pay council tax?</td>
+                                            <td class="bold">Yes</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="border-bottom: none">Yearly council tax amount</td>
+                                            <td class="bold" style="border-bottom: none">£1626.12</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                        </div>
+
+                        <div class="tab-content" id="tab-5">
+                            <br>
+                            <button class="button-toggle" id="toggle">Show yes and no answers</button>
+
+                                <table class="internal-table">
+                                    <tr>
+                                        <td></td>
+                                    </tr>
+                                    <tbody>
+                                        <tr>
+                                            <td>Type of property</td>
+                                            <td class="bold">Rented accommodation</td>
+                                        </tr>
+                                        <tr class="target" style="display:none;">
+                                            <td>Getting housing benefit</td>
+                                            <td class="bold">Yes</td>
+                                        </tr>
+                                        <tr class="target" style="display:none;">
+                                            <td>How much rent is paid by housing benefit</td>
+                                            <td class="bold">Some</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Rent amount after housing benefit</td>
+                                            <td class="bold">£220.20</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Rent frequency</td>
+                                            <td class="bold">Monthly</td>
+                                        </tr>
+                                        <tr class="target" style="display:none;">
+                                            <td>Are meals or energy bills included in your rent?</td>
+                                            <td class="bold">No</td>
+                                        </tr>
+                                        <tr class="target" style="display:none;">
+                                            <td>Do you pay service charges?</td>
+                                            <td class="bold">No</td>
+                                        </tr>
+                                        <tr class="target" style="display:none;">
+                                            <td>Do you pay ground rent?</td>
+                                            <td class="bold">No</td>
+                                        </tr>
+                                        <tr class="target" style="display:none;">
+                                            <td>Do you pay council tax?</td>
+                                            <td class="bold">Yes</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="border-bottom: none">Yearly council tax amount</td>
+                                            <td class="bold" style="border-bottom: none">£1626.12</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                        </div>
+
+                        <div class="tab-content" id="tab-6">
+                            <br>
+                            <button class="button-toggle" id="toggle">Show yes and no answers</button>
+                            <div class="">
+                                <p></p>
+                                <table class="internal-table">
+                                    <tbody>
+                                        <tr>
+                                            <td>Type of property</td>
+                                            <td class="bold">Rented accommodation</td>
+                                        </tr>
+                                        <tr class="target" style="display:none;">
+                                            <td>Getting housing benefit</td>
+                                            <td class="bold">Yes</td>
+                                        </tr>
+                                        <tr class="target" style="display:none;">
+                                            <td>How much rent is paid by housing benefit</td>
+                                            <td class="bold">Some</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Rent amount after housing benefit</td>
+                                            <td class="bold">£220.20</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Rent frequency</td>
+                                            <td class="bold">Monthly</td>
+                                        </tr>
+                                        <tr class="target" style="display:none;">
+                                            <td>Are meals or energy bills included in your rent?</td>
+                                            <td class="bold">No</td>
+                                        </tr>
+                                        <tr class="target" style="display:none;">
+                                            <td>Do you pay service charges?</td>
+                                            <td class="bold">No</td>
+                                        </tr>
+                                        <tr class="target" style="display:none;">
+                                            <td>Do you pay ground rent?</td>
+                                            <td class="bold">No</td>
+                                        </tr>
+                                        <tr class="target" style="display:none;">
                                             <td>Do you pay council tax?</td>
                                             <td class="bold">Yes</td>
                                         </tr>
@@ -373,78 +552,85 @@ input.submit {
                                 </table>
                             </div>
                         </div>
-                        <div class="tab-content" id="tab-6">
-                            <div class="makeScrollable2">
-                                <table class="internal-table">
-                                    <thead>
-                                        <tr>
-                                            <th>Reference</th>
-                                            <th>Name</th>
-                                            <th>Address</th>
-                                            <th>Postcode</th>
-                                            <th>Status</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>
-                                                <a href="#">823456789</a>
-                                            </td>
-                                            <td>Joe Bloggs</td>
-                                            <td>9 Hotspur street, Townford</td>
-                                            <td>NE1 0LD</td>
-                                            <td>Open</td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <a href="#">423456789</a>
-                                            </td>
-                                            <td>Joe J Bloggs</td>
-                                            <td>9 Hotspur street, Townford</td>
-                                            <td>NE1 0LD</td>
-                                            <td>Open</td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <a href="#">523456789</a>
-                                            </td>
-                                            <td>Joe Bloggs</td>
-                                            <td>17 Trump street, Townford</td>
-                                            <td>NE1 5LD</td>
-                                            <td>Open</td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <a href="#">623456789</a>
-                                            </td>
-                                            <td>Laura Hartford</td>
-                                            <td>9 Hotspur street, Townford</td>
-                                            <td>NE1 0LD</td>
-                                            <td>Open</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
+            <div class="column-one-quarter" style="">
+                <div class="grid-row highlight1" style="margin-top:0px">
+                <h3 class="heading-small" style="margin-bottom: 0px">Uploaded documents</h3>
+<p><a href="#">View document</a></p>
+                    <h3 class="heading-small" style="margin-bottom: 0px">History</h3>
+
+                    <p class="secondary-text">3 minutes ago</p>
+                    <details>
+                        <summary>
+                            <span class="summary">Change: Job income amount</span>
+                        </summary>
+                        <div class="panel panel-border-narrow">
+                            <p>If you’re not sure about your nationality, try to find out from an official document like a passport or national ID card.</p>
+                        </div>
+                    </details>
+
+                    <p class="secondary-text">5 minutes ago</p>
+                    <details>
+                        <summary>
+                            <span class="summary">Added document</span>
+                        </summary>
+                        <div class="panel panel-border-narrow">
+                            <p>If you’re not sure about your nationality, try to find out from an official document like a passport or national ID card.</p>
+                        </div>
+                    </details>
+
+                    <p class="secondary-text">01/01/2018</p>
+                    <details>
+                        <summary>
+                            <span class="summary">Case registered</span>
+                        </summary>
+                        <div class="panel panel-border-narrow"></div>
+                    </details>
+
+                </div>
+            </div>
         </div>
-</main>
+    </main>
 
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script >
+function openCity(evt, cityName) {
+    // Declare all variables
+    var i, tabcontent, tablinks;
+
+    // Get all elements with class="tabcontent" and hide them
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+
+    // // Get all elements with class="tablinks" and remove the class "active"
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+
+    // Show the current tab, and add an "active" class to the button that opened the tab
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+} 
+</script>
+
 <script>
-$(document).ready(function(){
-    $(".btn1").click(function(){
-        $(".tog").hide();
-    });
-    $(".btn2").click(function(){
-        $(".tog").show();
+$("#toggle").click(function(){
+    var $target = $('.target'),
+        $toggle = $(this);
+
+    $target.slideToggle( 200, function () {
+        $toggle.text(($target.is(':visible') ? 'Hide' : 'Show') + ' yes and no answers');
     });
 });
 </script>
+
 
 
 
