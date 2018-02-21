@@ -1,12 +1,30 @@
 {% extends "layout_bsa_internal.html" %}
 
 {% block page_title %}
-  Single User View
+  LIS Staff View
 {% endblock %}
 
 {% block after_header %}
 
 <style>
+.local-header__intro {
+  color: #fff;
+  max-width: 40em;
+
+  position: relative; }
+  @media (min-width: 925px) {
+    .local-header__intro {
+
+      padding-top: 16px; } }
+  .local-header__intro:before {
+    background-color: #76adda;
+    content: "";
+    display: block;
+    height: 4px;
+    left: 0;
+    position: absolute;
+    top: -2px;
+    width: 130px; }
 .tabcontent {
     display: none;
     padding: 0px;
@@ -136,6 +154,125 @@ details{
 .internal-table td:nth-child(3) {
     width: 50%;
 }
+.callout--attention {
+    border: 8px solid #0072ce;
+}   
+.local-header {
+  margin: 0 16px;
+  max-width: 960px;
+  margin-top: 16px;
+  background-color: #005eb8;
+  padding-left:25px; }
+  @media (min-width: 925px) {
+    .local-header {
+      margin: 0 32px; } }
+  .grid-row .local-header {
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0; }
+  .local-header a:link {
+    color: #fff; }
+  .local-header a:visited {
+    color: #fff; }
+  .local-header a:hover {
+    color: #d4efff; }
+  .local-header a:active {
+    color: #d4efff; }
+  .local-header a:focus {
+    outline: 3px solid #ffb81c; }
+  .local-header * + * {
+    margin-top: 16px; }
+
+.local-header__return {
+  background-color: #005eb8;
+  border: 2px solid #76adda;
+  display: inline-block;
+  margin-bottom: 16px;
+  padding: 8px 16px;
+  text-decoration: none; }
+  .local-header__return:link {
+    color: #fff; }
+  .local-header__return:visited {
+    color: #fff; }
+  .local-header__return:hover {
+    color: #d4efff; }
+  .local-header__return:active {
+    color: #d4efff; }
+  .local-header__return:focus {
+    outline: 3px solid #ffb81c; }
+  .local-header__return:hover {
+    border-color: #e6eff8;
+    color: #fff; }
+
+.local-header__title {
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 40px;
+  text-transform: none;
+  color: #fff;
+  margin: 0; }
+
+.local-header__intro {
+  color: #fff;
+  max-width: 40em;
+  position: relative; }
+  .local-header__intro:before {
+    background-color: #76adda;
+    content: "";
+    display: block;
+    height: 4px;
+    left: 0;
+    position: absolute;
+    top: -2px;
+    width: 130px; }
+.local-header {
+  padding-top: 10px; }
+  .local-header ol {
+    margin-top: 50px; }
+  .local-header ol li.active a {
+    font-weight: 600;
+    text-decoration: none; }
+  @media (min-width: 641px) {
+    .local-header ol.twocolumns {
+      display: block;
+      -moz-column-count: 2;
+      -moz-column-gap: 50px;
+      -webkit-column-count: 2;
+      -webkit-column-gap: 50px;
+      column-count: 2;
+      column-gap: 50px; } }
+  @media (min-width: 641px) {
+    .local-header {
+      overflow: auto;
+      height: auto !important; } }
+
+.local-header--nomargin {
+  margin-top: 0;
+  margin-left: 0;
+  margin-right: 0; }
+
+.local-header__title {
+  font-size: 40px;
+  line-height: 48px; }
+
+
+.local-header--plain {
+  padding: 0px;
+  font-size: 20px;
+  margin: 0 0 56px 0;
+  background-color: transparent;
+  color: #231f20; }
+  .local-header--plain .local-header__title {
+    font-size: 40px;
+    line-height: 48px;
+    color: #231f20; }
+    @media (min-width: 925px) {
+      .local-header--plain .local-header__title {
+        font-size: 48px;
+        line-height: 64px; } }
+  .local-header--plain .local-header__subtitle {
+    font-size: 20px;
+    margin-top: 0px; }
 </style>
 
 <div id="menu">
@@ -193,7 +330,7 @@ details{
                 <a class="link-back" href="javascript:history.go(-1)" style="margin: 0.26316em 0em 1.05263em 1em">Back to cases</a>
             </div>
             <div class="column-half" style="padding-left:20px">
-                <h2 class="heading-large" style="margin-top:0px; color:#003087">Shiela Green <span class="heading-medium" style="color:black">k5g v78</span></h2>
+                <h2 class="heading-large" style="margin-top:0px; color:#0072ce">Shiela Green <span class="heading-medium" style="color:black">k5g v78</span></h2>
             </div>
             <div class="column-one-quarter"></div>
             <div class="column-one-quarter"></div>
@@ -203,7 +340,7 @@ details{
                 <div class="grid-row highlight1" style="margin-top:0px">
 
                     <h3 class="heading-small" style="margin-bottom: 0px">Date received</h3>
-                    <p class="change-spacep">01/01/2018</p>
+                    <p class="change-spacep">01/01/2018 | <span style="color:#003087">Digital application</span></p>
                     <h3 class="heading-small" style="margin-bottom: 0px">Address</h3>
                     <p class="change-spacep">9 Hotspur street,<br>
                     Townford,<br>
@@ -524,7 +661,22 @@ details{
                 </div>
             </div>
             <div class="column-one-quarter" style="">
-                <div class="grid-row highlight1" style="margin-top:0px">
+
+            <div class="local-header">
+    <h2 class="local-header__title">HC2</h2>
+    <div class="local-header__intro">
+      <p style="color: #fff; margin-bottom: 0.3em">
+<a href="#">View Calculation</a></p>
+      <p style="color: #fff; margin-top:0px;">
+<a href="#">Send copy certificate</a></p>
+      
+    </div>
+  </div>
+<!--                 <div class="grid-row highlightblue" style="margin-top:0px">
+                <h2 class="heading-medium">HC2</h2>
+                </div> -->
+<br>
+                <div class="grid-row highlight1" style="margin-top:0px; margin-right:1px ">
                 <h3 class="heading-small" style="margin-bottom: 0px">Uploaded documents</h3>
 <p><a href="#">View document</a></p>
                     <h3 class="heading-small" style="margin-bottom: 0px">History</h3>
@@ -532,7 +684,7 @@ details{
                     <p class="secondary-text">3 minutes ago</p>
                     <details>
                         <summary>
-                            <span class="summary">Change: Job income amount</span>
+                            <span class="summary">Change: Job income</span>
                         </summary>
                         <div class="panel panel-border-narrow">
                             <p>If you’re not sure about your nationality, try to find out from an official document like a passport or national ID card.</p>
