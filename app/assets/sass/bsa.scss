@@ -407,27 +407,7 @@ td.strong {
     @include res_inputs($break-small);
 }
 
-table {
-  font-size: 1.5rem;
-  tr {
-    td {
-      width: 35%;
-      border: none;
-      display: table-cell;
-      vertical-align: inherit;
-      padding: 2rem 3rem 0 0;
-      &:nth-child(2) {
-        width: 40%;
-        font-weight: 700;
-        padding-right :0;
-      }
-      &:nth-child(3) {
-        padding-right :0;
-        width: 20%;
-      }
-    }
-  }
-}
+
 
 .table-head {
   margin: 40px 0 10px 0;
@@ -696,27 +676,6 @@ table {
   }
 
 
-table {
-  font-size: 1.5rem;
-  tr {
-    td {
-      width: 35%;
-      border: none;
-      display: table-cell;
-      vertical-align: top;
-      padding: 2rem 3rem 0 0;
-      &:nth-child(2) {
-        width: 40%;
-        font-weight: 700;
-        padding-right :0;
-      }
-      &:nth-child(3) {
-        padding-right :0;
-        width: 20%;
-      }
-    }
-  }
-}
 
 .table-head {
   margin: 40px 0 10px 0;
