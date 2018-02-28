@@ -1,0 +1,442 @@
+{% extends "layout_bsa_internal.html" %}
+
+{% block page_title %}
+  LIS Staff View
+{% endblock %}
+
+{% block after_header %}
+
+<link type="text/css" rel="stylesheet" media="screen" href="../../../../assets/stylesheets/overrides.css">
+<link type="text/css" rel="stylesheet" media="screen" href="../../../../assets/stylesheets/complete.css">
+
+<!-- #BeginEditable "styles" -->
+
+
+<!-- <link type="text/css" rel="stylesheet" media="screen" href="/public/stylesheets/bootstrap.css"> -->
+
+<style type="text/css">
+
+.task-due-soon {
+    display: -moz-inline-stack;
+    display: inline-block;
+    margin: 0 8px 0 0;
+        margin-right: 8px;
+    padding: 2px 5px 0;
+    font-weight: 700;
+    text-transform: none;
+    font-size: 16px;
+    line-height: 1.25;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #b10e1e;
+    float: left;
+    margin-right: 0;
+    padding: 1px 5px 4px;
+        padding-top: 1px;
+    padding-top: 3px;
+  }
+  .task-due-done {
+    display: -moz-inline-stack;
+    display: inline-block;
+    margin: 0 8px 0 0;
+        margin-right: 8px;
+    padding: 2px 5px 0;
+    font-weight: 700;
+    text-transform: none;
+    font-size: 16px;
+    line-height: 1.25;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #28a197;
+    float: left;
+    margin-right: 0;
+    padding: 1px 5px 4px;
+        padding-top: 1px;
+    padding-top: 3px;
+  }
+    .task-due-pending {
+    display: -moz-inline-stack;
+    display: inline-block;
+    margin: 0 8px 0 0;
+        margin-right: 8px;
+    padding: 2px 5px 0;
+    font-weight: 700;
+    text-transform: none;
+    font-size: 16px;
+    line-height: 1.25;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #2b8cc4;
+    float: left;
+    margin-right: 0;
+    padding: 1px 5px 4px;
+        padding-top: 1px;
+    padding-top: 3px;
+  }
+
+.label,.glyphicon { margin-right:5px; }
+
+.casecounter{
+  font-size:x-small;
+  vertical-align:middle;
+}
+
+.navtextsize{
+
+}
+
+#global-header #logo img {
+  width:auto !important;
+  position: relative;
+  top: -2px;
+  height: 34px;
+  padding-right: 6px;
+  float: left;
+  display: inline;
+  line-height: inherit;
+  border: none;
+}
+#global-header a#logo.content{
+  font-size:19px;
+}
+.navbar {
+    position: relative;
+    min-height: 55px;
+    margin-bottom: 20px;
+    }
+    .navbar-default {
+    background-color: #f8f8f8;}
+
+    .navbar-default {
+    border: none;
+    border-radius: 0;}
+
+    .navbar-form {
+    margin: 10px 0;
+    padding: 0;}
+
+    .navbar-form .input-group {
+    display: inline-table;
+    vertical-align: middle;
+}
+.input-group {
+    position: relative;
+    display: table;
+    border-collapse: separate;}
+.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+    border-color: #e7e7e7;}
+    .navbar-left {
+    float: left !important;
+}
+.navbar-form .input-group > .form-control {
+    width: 100%;
+}
+nav.navbar .form-control {
+    height: 35px;
+}
+.input-group-btn {
+    position: relative;
+    font-size: 0;
+    white-space: nowrap;
+}
+.input-group-btn:last-child > .btn, .input-group-btn:last-child > .btn-group {
+    margin-left: -1px;
+}
+nav .btn.btn-primary {
+    border-radius: 0;
+        border-top-left-radius: 0px;
+        border-bottom-left-radius: 0px;
+    background: black;}
+    .input-group-btn > .btn {
+    position: relative;
+}
+
+.site-search .content {
+    margin: 0 15px;
+}
+input.submit {
+  margin-left:-6.5px; 
+    width: 36px;
+    height: 38px;
+    border: 1px solid #005ea5;
+    border-width: 0 0 0 1px;
+    border-left-color: #222;
+    border-radius: 0;
+    overflow: hidden;
+    text-indent: -5000px;
+    color: #fff;
+    background-color: #005ea5;
+    background-image: url(https://assets.publishing.service.gov.uk/static/search-button-ca89b2a79f944909ceb7370d3f0b78811d32b96e883348fcd8886f63dd619585.png);
+    background-repeat: no-repeat;
+   background-position: 0%;}
+
+
+nav.navbar ul.pagination.see-all {
+    margin-left: 10px;
+}
+nav.navbar ul.pagination {
+    margin: 10px 0;
+    float: right;
+    height: 35px;
+}
+.pagination {
+    display: inline-block;
+    padding-left: 0;
+    border-radius: 4px;
+}
+.pagination > li {
+    display: inline;
+}
+nav.navbar ul.pagination li.active a {
+    background: #005ea5;
+    color: white;
+}
+nav.navbar ul.pagination {
+  margin: 10px 0;
+  float: right;
+  height: 35px;
+}
+
+nav.navbar ul.pagination.see-all {
+  margin-left: 10px;
+}
+
+nav.navbar ul.pagination li a, nav.navbar ul.pagination li a span {
+  font-size: 16px !important;
+  border-radius: 0;
+  color: #005ea5;
+  border-color: #005ea5;
+}
+
+nav.navbar ul.pagination li.active a {
+  background: #005ea5;
+  color: white;
+}
+
+.navbar-default {
+  border: none;
+  border-radius: 0;
+}
+
+nav ul.pagination li a {
+  border-radius: 0;
+}
+.pagination > li > a, .pagination > li > span {
+    position: relative;
+    float: left;
+    padding: 6px 12px;
+    margin-left: -1px;
+    line-height: 1.42857143;
+  background: #fff;
+    text-decoration: none;
+
+    border: 1px solid #ddd;
+
+}
+/*table > thead > tr > th {
+    border-bottom: 5px solid #ddd;
+}*/
+.second-row:hover { background: #f8f8f8;
+}
+  .large-numbers p strong {
+    font-size: 80px;
+    line-height: 1;
+    font-weight: bold;
+}
+
+/* Style the tab */
+.tabblue {
+    overflow: hidden;
+/*    border: 1px solid #ccc;*/
+    background-color: #005EB8;
+}
+
+/* Style the buttons that are used to open the tab content */
+.tabblue button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+}
+
+/* Change background color of buttons on hover */
+.tabblue button:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+/* Create an active/current tablink class */
+.tabblue button.active {
+    background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+    font-size: 16px;
+} 
+.tablinksblue{
+font-size:16px;
+color: white;
+
+}
+
+</style>
+<div id="menu">
+        <div id="menu-content">
+            <div class="grid-row">
+                <div class="column-full" style="padding-left:30px">
+                    <ul>
+      <!--                                                <li>
+              <a class="menu-button" id="select-box" href="results">Back to search</a>
+            </li> -->
+                        
+                        <li>
+                            <div class="form-group">
+                                <select class="form-control" id="select-box" name="select-box" onchange="location = this.value;" style="width:200px; margin-left:46em">
+                                    <option hidden="" selected>
+                                        Date view
+                                    </option>
+                                    <option value="assessors">
+                                        Oldest
+                                    </option>
+                                    <option value="assessors">
+                                        Monday, 01 Jan 2018
+                                    </option>
+                                    <option value="#">
+                                        Tuesday, 02 Jan 2018
+                                    </option>
+                                    <option value="#">
+                                        Wednesday, 03 Jan 2018
+                                    </option>
+                                    <option value="#">
+                                        Thursday, 04 Jan 2018
+                                    </option>
+                                    <option value="#">
+                                        Friday, 05 Jan 2018
+                                    </option>
+                                </select>
+                            </div>
+                        </li>
+                        <li style="float:right">
+                            <div class="form-group">
+                                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                                    <input class="form-control" id="full-name-f2" name="full-name-f2" placeholder="Search" style="width:85%; padding: 5px 4px 4px; border: 2px solid #0b0c0c;font-size: 19px; line-height: 1.31579; height: 37px; margin:2px 0px 2px 0px;" type="text"> <input class="submit" style=" margin-left:-6.5px; width: 36px; height: 37px; border: 1px solid #005ea5; border-width: 0 0 0 1px; border-left-color: #222; border-radius: 0; overflow: hidden; text-indent: -5000px; color: #fff; background-color: #005ea5; background-image: url(https://assets.publishing.service.gov.uk/static/search-button-ca89b2a79f944909ceb7370d3f0b78811d32b96e883348fcd8886f63dd619585.png); background-repeat: no-repeat; background-position: 0%; padding-top:4px; padding-bottom:1px" type="submit" value="Search">
+                                </div>
+                            </div>
+                        </li> 
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+    {% block content %}
+
+
+
+
+  <main id="content" role="main">
+
+    <!-- #BeginEditable "content" -->
+
+
+      <h1 class="form-title heading-medium">Low Income Scheme digital applications</h1>
+  <div class="grid-row">
+  <div class="column-quarter">
+
+  <div class="large-numbers">
+  
+              <p><strong>121</strong><br>Total applications</p>
+
+          </div>
+</div>
+  <div class="column-quarter">
+
+  <div class="large-numbers">
+  
+              <p><strong>121</strong><br>To complete</p>
+
+          </div>
+</div>
+  <!-- <div class="column-quarter">
+
+  <div class="large-numbers">
+  
+              <p><strong>9</strong><br>Pending</p>
+
+          </div>
+</div>
+  <div class="column-quarter">
+
+  <div class="large-numbers">
+  
+              <p><strong>5</strong><br>Printed</p>
+
+          </div>
+</div> -->
+</div>
+      <!-- Navbar - End -->
+<br>
+
+
+      <!-- Table - Start -->
+       <!-- <div class="row">
+<div class="small-12 columns"> 
+          <table>
+            <thead>
+              <tr>
+        <th style="width:50px"></th> 
+                <th style= "width:0%">Date received</th>
+                <th style= "min-width: 100px">Reference number</th>
+                <th style= "min-width: 200px">Name</th>
+                <th style= "width:  ">Date of birth</th>
+                <th style= "">Postcode</th>
+                 <th style= "">Status</th> 
+                
+                <th width="19%">Registration date</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="second-row">
+ <td><img src="/public/images/web.svg" alt="" style="height:36px;"></td>
+              <td>02/01/2018</td>
+                <td>61947226</td>
+                <td>Donna Goodman</td>
+                <td>15/07/1982</td>
+                <td>BD12 4WL</td>
+
+              </tr>
+              
+            
+            </tbody>
+          </table>
+          <br>
+
+
+      
+
+  </div> -->
+
+</main>
+
+
+
+      </script>
+
+      <!-- #EndEditable -->
+
+
+   {% endblock %}

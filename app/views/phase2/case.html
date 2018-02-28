@@ -1,0 +1,760 @@
+{% extends "layout_bsa_internal.html" %}
+
+{% block page_title %}
+  LIS Staff View
+{% endblock %}
+
+{% block after_header %}
+
+<style>
+.local-header__intro {
+  color: #fff;
+  max-width: 40em;
+
+  position: relative; }
+  @media (min-width: 925px) {
+    .local-header__intro {
+
+      padding-top: 16px; } }
+  .local-header__intro:before {
+    background-color: #76adda;
+    content: "";
+    display: block;
+    height: 4px;
+    left: 0;
+    position: absolute;
+    top: -2px;
+    width: 130px; }
+.tabcontent {
+    display: none;
+    padding: 0px;
+    border: none ;
+    border-top: none;
+    }
+
+.tab2 {
+    overflow: hidden;
+    border: none;
+    background-color: none;
+}
+
+/* Style the buttons that are used to open the tab content */
+.tab2 button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 0.6em;
+    transition: 0.3s;
+}
+
+/* Change background color of buttons on hover */
+.tab2 button:hover {
+    background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab2 button.active {
+    background-color: #ccc;
+        border: 1px solid ;
+
+}
+
+.tablinks{
+font-size:16px;
+}
+    .toggle {
+    float:right;
+    text-decoration: underline;
+    color: #005ea5;
+}
+    .link-back {
+  display: -moz-inline-stack;
+  display: inline-block;
+  position: relative;
+  font-family: Arial, sans-serif;
+  font-weight: 400;
+  text-transform: none;
+  font-size: 14px;
+  line-height: 1.14286;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding-left: 14px;
+  text-decoration: none;
+      border-bottom: 1px solid #005ea5
+}
+
+@media (min-width: 641px) {
+  .link-back {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+}
+
+.link-back:link, .link-back:visited, .link-back:hover, .link-back:active {
+  color: #005ea5;
+}
+
+.link-back::before {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-top: 5px solid transparent;
+  border-right: 6px solid #005ea5;
+  border-bottom: 5px solid transparent;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  margin-top: -6px;
+}
+
+input.submit {
+  margin-left:-6.5px; 
+    width: 36px;
+    height: 38px;
+    border: 1px solid #005ea5;
+    border-width: 0 0 0 1px;
+    border-left-color: #222;
+    border-radius: 0;
+    overflow: hidden;
+    text-indent: -5000px;
+    color: #fff;
+    background-color: #005ea5;
+    background-image: url(https://assets.publishing.service.gov.uk/static/search-button-ca89b2a79f944909ceb7370d3f0b78811d32b96e883348fcd8886f63dd619585.png);
+    background-repeat: no-repeat;
+   background-position: 0%;
+}
+
+.button-toggle{
+    float: right;
+    font-weight: 400;
+    text-transform: none;
+    font-size: 14px;
+    line-height: 1.1428571429;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: #005ea5;
+    text-decoration: underline;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+}
+.summary{
+    font-size: 16px;
+}
+.secondary-text{
+    color:#6F777B;
+    margin-bottom: 0em;
+}
+details{
+    margin-bottom:0.3em;
+}
+.internal-table td:nth-child(3) {
+    width: 50%;
+}
+.callout--attention {
+    border: 8px solid #0072ce;
+}   
+.local-header {
+  margin: 0 16px;
+  max-width: 960px;
+  margin-top: 16px;
+  background-color: #005eb8;
+  padding-left:25px; }
+  @media (min-width: 925px) {
+    .local-header {
+      margin: 0 32px; } }
+  .grid-row .local-header {
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0; }
+  .local-header a:link {
+    color: #fff; }
+  .local-header a:visited {
+    color: #fff; }
+  .local-header a:hover {
+    color: #d4efff; }
+  .local-header a:active {
+    color: #d4efff; }
+  .local-header a:focus {
+    outline: 3px solid #ffb81c; }
+  .local-header * + * {
+    margin-top: 16px; }
+
+.local-header__return {
+  background-color: #005eb8;
+  border: 2px solid #76adda;
+  display: inline-block;
+  margin-bottom: 16px;
+  padding: 8px 16px;
+  text-decoration: none; }
+  .local-header__return:link {
+    color: #fff; }
+  .local-header__return:visited {
+    color: #fff; }
+  .local-header__return:hover {
+    color: #d4efff; }
+  .local-header__return:active {
+    color: #d4efff; }
+  .local-header__return:focus {
+    outline: 3px solid #ffb81c; }
+  .local-header__return:hover {
+    border-color: #e6eff8;
+    color: #fff; }
+
+.local-header__title {
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 40px;
+  text-transform: none;
+  color: #fff;
+  margin: 0; }
+
+.local-header__intro {
+  color: #fff;
+  max-width: 40em;
+  position: relative; }
+  .local-header__intro:before {
+    background-color: #76adda;
+    content: "";
+    display: block;
+    height: 4px;
+    left: 0;
+    position: absolute;
+    top: -2px;
+    width: 130px; }
+.local-header {
+  padding-top: 10px; }
+  .local-header ol {
+    margin-top: 50px; }
+  .local-header ol li.active a {
+    font-weight: 600;
+    text-decoration: none; }
+  @media (min-width: 641px) {
+    .local-header ol.twocolumns {
+      display: block;
+      -moz-column-count: 2;
+      -moz-column-gap: 50px;
+      -webkit-column-count: 2;
+      -webkit-column-gap: 50px;
+      column-count: 2;
+      column-gap: 50px; } }
+  @media (min-width: 641px) {
+    .local-header {
+      overflow: auto;
+      height: auto !important; } }
+
+.local-header--nomargin {
+  margin-top: 0;
+  margin-left: 0;
+  margin-right: 0; }
+
+.local-header__title {
+  font-size: 40px;
+  line-height: 48px; }
+
+
+.local-header--plain {
+  padding: 0px;
+  font-size: 20px;
+  margin: 0 0 56px 0;
+  background-color: transparent;
+  color: #231f20; }
+  .local-header--plain .local-header__title {
+    font-size: 40px;
+    line-height: 48px;
+    color: #231f20; }
+    @media (min-width: 925px) {
+      .local-header--plain .local-header__title {
+        font-size: 48px;
+        line-height: 64px; } }
+  .local-header--plain .local-header__subtitle {
+    font-size: 20px;
+    margin-top: 0px; }
+</style>
+
+<div id="menu">
+        <div id="menu-content">
+            <div class="grid-row">
+                <div class="column-full" style="padding-left:30px">
+                    <ul>
+                        <li style="font-weight:700; font-size: 24px; padding-right:1em">CRS 56743897</li>
+                        <!-- <li>
+                            <div class="form-group">
+                                <select class="form-control" id="select-box" name="select-box" onchange="location = this.value;" style="width:200px">
+                                    <option hidden="" selected>
+                                        Case accepted
+                                    </option>
+                                    <option value="results">
+                                        No further action, insufficient information
+                                    </option>
+                                    <option value="results">
+                                        No further action, claim withdrawn
+                                    </option>
+                                    <option value="results">
+                                        Pending Claim Returned (eg AG1)
+                                    </option>
+                                    <option value="results">
+                                        Pending, more info (FIL stage 1)
+                                    </option>
+                                    <option value="results">
+                                        Pending, Internal Referal
+                                    </option>
+                                    <option value="results">
+                                        Waiting in print queue
+                                    </option>
+                                </select>
+                            </div>
+                        </li> -->
+                        <li style="float:right">
+                            <div class="form-group">
+                                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                                    <input class="form-control" id="full-name-f2" name="full-name-f2"  style="width:85%; padding: 5px 4px 4px 32px; border: 2px solid #0b0c0c;font-size: 19px; line-height: 1.31579; height: 37px; margin:2px 0px 2px 0px;" type="text"> <input class="submit" style=" margin-left:-6.5px; width: 36px; height: 37px; border: 1px solid #005ea5; border-width: 0 0 0 1px; border-left-color: #222; border-radius: 0; overflow: hidden; text-indent: -5000px; color: #fff; background-color: #005ea5; background-image: url(https://assets.publishing.service.gov.uk/static/search-button-ca89b2a79f944909ceb7370d3f0b78811d32b96e883348fcd8886f63dd619585.png); background-repeat: no-repeat; background-position: 0%; padding-top:4px; padding-bottom:1px" type="submit" value="Search">
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+
+    {% block content %}
+    <main id="content" role="main">
+        <br>
+        <div class="grid-row" style="margin-top:0.3em">
+            <div class="column-one-quarter">
+                <a class="link-back" href="assessors" style="margin: 0.26316em 0em 1.05263em 1em">Back to cases</a>
+            </div>
+            <div class="column-half" style="padding-left:20px">
+                <h2 class="heading-large" style="margin-top:0px; color:#0072ce">Shiela Green <span class="heading-medium" style="color:black">k5g v78</span></h2>
+            </div>
+            <div class="column-one-quarter">            
+            <div class="form-group">
+            <a class="button" id="search-button" href="case2" role="button">Get next application</a>
+            </div>
+            </div>
+        </div>
+        <div class="grid-row">
+            <div class="column-one-quarter">
+                <div class="grid-row highlight1" style="margin-top:0px">
+
+                    <h3 class="heading-small" style="margin-bottom: 0px">Date received</h3>
+                    <p class="change-spacep">01/01/2018 | <span style="color:#003087">Digital application</span></p>
+                    <h3 class="heading-small" style="margin-bottom: 0px">Address</h3>
+                    <p class="change-spacep">9 Hotspur street,<br>
+                    Townford,<br>
+                    NE1 0LD</p>
+                    <h3 class="heading-small" style="margin-bottom: 0px">Date of birth</h3>
+                    <p class="change-spacep">02/04/1945 (Age 73)</p>
+                    <h3 class="heading-small" style="margin-bottom: 0px">Telephone</h3>
+                    <p class="change-spacep">0191 268 1234</p>
+
+                    <div class="notice" style="margin-top:0.5em">
+                        <i class="icon icon-information" style="margin-top: -15px"><span class="visually-hidden">Warning</span></i> <strong style="font-size: 16px; padding-left:50px; font-weight:700; color:#0072CE">Text relay service needed</strong>
+                    </div>
+                    <h3 class="heading-small" style="margin-bottom: 0px">Email</h3>
+                    <p class="change-spacep" style="margin-bottom: 1.05263em">Shielagreen@gmail.com</p>
+                </div><br>
+                <div class="grid-row highlight1" style="margin-top:0px; min-height:0px">
+   
+                    <h3 class="heading-medium" style="margin: 0.3em 0em 0em 0em">Third party contact</h3>
+                    <h3 class="heading-small" style="margin-bottom: 0px">Name</h3>
+                    <p class="change-spacep">Andrew Green</p>
+                    <h3 class="heading-small" style="margin-bottom: 0px">Telephone</h3>
+                    <p class="change-spacep" style="margin-bottom: 1.05263em">07729 100 000</p>
+                </div>
+            </div>
+            <div class="column-half" style="padding-left:20px">
+<!--                 <div class="container rpads" style="border: 1px solid #bfc1c3;">
+                    <p style="padding:1em 1em 0em 1em"><a href="#" style="float:right">+ Add note</a></p>
+                    <div class="tab1-content current1" id="tab-2" style="padding: 1em;">
+                        <div class="makeScrollable1">
+                            <div></div>
+                            <table class="internal-table">
+                                <thead>
+                                    <tr>
+                                        <th>Date</th>
+                                        <th>Agent</th>
+                                        <th>Comments</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>08/01/2018 13.30</td>
+                                        <td>Tim</td>
+                                        <td>Email received with 4 most recent payslips.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>07/01/2018 13.00</td>
+                                        <td>Joanne</td>
+                                        <td>Cust rang to ask what evidence to send. Advice of last 4 payslips given.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>06/01/2018 09.03</td>
+                                        <td>Tim</td>
+                                        <td>Cust sent in P45. Rang to clarify income from work. Sent email to request payslip.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <br> -->
+                <div class="column-full" style="padding:0px">
+                    <div class="container rpads">
+                        <ul class="tabs rpads">
+                            <li class="tab-link current" data-tab="tab-3">Income</li>
+                            <li class="tab-link" data-tab="tab-4">Capital</li>
+                            <li class="tab-link" data-tab="tab-5">Housing costs</li>
+                            <li class="tab-link" data-tab="tab-6">Others living in home</li>                            
+                        </ul>
+                        <div class="tab-content current" id="tab-3" style="margin:0px">
+                            <br>
+                            <div class="tab2" style="border-bottom: 1px solid #bfc1c3; padding-bottom: 0.8em">
+                                <button class="tablinks" onclick="openCity(event, 'Newyork')">Pensions</button>
+                                <button class="tablinks" onclick="openCity(event, 'London')" style="margin-left:0.5em">Benefits</button>
+                                <button class="tablinks" onclick="openCity(event, 'Paris')" style="margin-left:0.5em">Jobs</button>
+                            </div>
+
+                            <!-- Tab content -->
+                            <div class="tabcontent" id="Newyork">
+                                <button class="button-toggle" id="toggle">Show yes and no answers</button>
+                                    <table class="internal-table">
+                                        <tbody>
+                                            <tr class="target" style="display:none;">
+                                                <td>Get a State Pension</td>
+                                                <td class="bold">Yes</td>
+                                            </tr>
+                                            <tr>
+                                                <td>State Pension amount</td>
+                                                <td class="bold">£122.30</td>
+                                            </tr>
+                                            <tr>
+                                                <td>State Pension frequency</td>
+                                                <td class="bold">Paid every 4 weeks</td>
+                                            </tr>
+                                                   </tbody>
+                                    </table><BR>
+                                       <table class="internal-table">
+                                        <tbody>
+                                            <tr class="target" style="display:none;">
+                                                <td>Get another pension</td>
+                                                <td class="bold">Yes</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Private or Workplace pension</td>
+                                                <td class="bold">NHS</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Pension amount</td>
+                                                <td class="bold">£68.20</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Pension frequency</td>
+                                                <td class="bold">Paid every month</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div class="tabcontent" id="London">
+                                <button class="button-toggle" id="toggle">Show yes and no answers</button>
+                                    <table class="internal-table">
+                                        <tbody>
+                                            <tr>
+                                                <td>Pension Credit Savings Credit</td>
+                                                <td class="bold">Yes</td>
+                                            </tr>
+                                         </tbody>
+                                    </table>
+                                    <BR>
+                                     <table class="internal-table">
+                                        <tbody>
+                                            <tr>
+                                                <td>Attendance Allowance</td>
+                                                <td class="bold">Yes</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Benefit amount</td>
+                                                <td class="bold">£220.40</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Benefit frequency</td>
+                                                <td class="bold">Paid every 4 weeks</td>
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div class="tabcontent" id="Paris">
+                                <button class="button-toggle" id="toggle">Show yes and no answers</button>
+                                    <table class="internal-table">
+                                        <tbody>
+                                            <tr>
+                                                <td>Has a job</td>
+                                                <td class="bold">No</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div class="tabcontent" id="Tokyo">
+                                <button class="button-toggle" id="toggle">Show yes and no answers</button>
+                                    <table class="internal-table">
+                                        <tbody>
+                                            <tr class="target" style="display:none;">
+                                                <td>Get a State Pension</td>
+                                                <td class="bold">Yes</td>
+                                            </tr>
+                                            <tr>
+                                                <td>State Pension amount</td>
+                                                <td class="bold">£122.30</td>
+                                            </tr>
+                                            <tr>
+                                                <td>State Pension frequency</td>
+                                                <td class="bold">Paid every 4 weeks</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div class="tabcontent" id="Paris">
+                                <button class="button-toggle" id="toggle">Show yes and no answers</button>
+                                    <table class="internal-table">
+                                        <tbody>
+                                            <tr class="target" style="display:none;">
+                                                <td>Get a State Pension</td>
+                                                <td class="bold">Yes</td>
+                                            </tr>
+                                            <tr>api
+                                                <td>State Pension amount</td>
+                                                <td class="bold">£122.30</td>
+                                            </tr>
+                                            <tr>
+                                                <td>State Pension frequency</td>
+                                                <td class="bold">Paid every 4 weeks</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                        </div>
+                        <div class="tab-content" id="tab-4">
+                            <button class="button-toggle" id="toggle">Show yes and no answers</button>
+                            <br>
+                            <div class="">
+                                <p></p>
+                                <table class="internal-table">
+                                    <tbody>
+                                        <tr>
+                                            <td>Capital over £6,000</td>
+                                            <td class="bold">No</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="tab-content" id="tab-5">
+
+                            <button class="button-toggle" id="toggle">Show yes and no answers</button>
+                            <br>
+                            <div class="">
+                                <p></p>
+                                <table class="internal-table">
+                                    <tbody>
+                                        <tr>
+                                            <td>Type of property</td>
+                                            <td class="bold">Rented accommodation</td>
+                                        </tr>
+                                        <tr class="target">
+                                            <td>Getting housing benefit</td>
+                                            <td class="bold">Yes</td>
+                                        </tr>
+                                        <tr class="target" >
+                                            <td>How much rent is paid by housing benefit</td>
+                                            <td class="bold">Some</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Rent amount after housing benefit</td>
+                                            <td class="bold">£220.20</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Rent frequency</td>
+                                            <td class="bold">Monthly</td>
+                                        </tr>
+                                        <tr class="target" >
+                                            <td>Are meals or energy bills included in your rent?</td>
+                                            <td class="bold">No</td>
+                                        </tr>
+                                        <tr class="target" >
+                                            <td>Do you pay service charges?</td>
+                                            <td class="bold">No</td>
+                                        </tr>
+                                        <tr class="target" >
+                                            <td>Do you pay ground rent?</td>
+                                            <td class="bold">No</td>
+                                        </tr>
+                                        <tr class="target" >
+                                            <td>Do you pay council tax?</td>
+                                            <td class="bold">Yes</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="border-bottom: none">Yearly council tax amount</td>
+                                            <td class="bold" style="border-bottom: none">£1626.12</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="tab-content" id="tab-6">
+                            <button class="button-toggle" id="toggle">Show yes and no answers</button>
+                            <br>
+                            <div class="">
+                                <p></p>
+                                <table class="internal-table">
+                                    <tbody>
+                                        <tr>
+                                            <td>Partner</td>
+                                            <td class="bold">No</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Dependant children</td>
+                                            <td class="bold">No</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Anyone aged 18 or over</td>
+                                            <td class="bold">Yes</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <br>
+                                <table class="internal-table">
+                                    <tbody>
+                                        <tr>
+                                            <td>Name</td>
+                                            <td class="bold">Anthony Green</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Border or lodger</td>
+                                            <td class="bold">No</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Full time student</td>
+                                            <td class="bold">No</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Benefits</td>
+                                            <td class="bold">No</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Work more than 16 hours</td>
+                                            <td class="bold">Yes</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="border-bottom: none">Income</td>
+                                            <td class="bold" style="border-bottom: none">Over £140 a week</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="column-one-quarter" style="">
+
+<!--             <div class="local-header">
+    <h2 class="local-header__title">HC2</h2>
+    <div class="local-header__intro">
+      <p style="color: #fff; margin-bottom: 0.3em">
+<a href="#">View Calculation</a></p>
+      <p style="color: #fff; margin-top:0px;">
+<a href="#">Send copy certificate</a></p>
+      
+    </div>
+  </div> -->
+<!--                 <div class="grid-row highlightblue" style="margin-top:0px">
+                <h2 class="heading-medium">HC2</h2>
+                </div> -->
+<!-- <br> -->
+                <div class="grid-row highlight1" style="margin-top:0px; margin-right:1px; min-height: 0px">
+                <h3 class="heading-small" style="margin-bottom: 0px">Uploaded documents</h3>
+<p><a href="#">View document</a></p>
+                    <!-- <h3 class="heading-small" style="margin-bottom: 0px">History</h3>
+
+                    <p class="secondary-text">3 minutes ago</p>
+                    <details>
+                        <summary>
+                            <span class="summary">Change: Job income</span>
+                        </summary>
+                        <div class="panel panel-border-narrow">
+                            <p>If you’re not sure about your nationality, try to find out from an official document like a passport or national ID card.</p>
+                        </div>
+                    </details>
+
+                    <p class="secondary-text">5 minutes ago</p>
+                    <details>
+                        <summary>
+                            <span class="summary">Added document</span>
+                        </summary>
+                        <div class="panel panel-border-narrow">
+                            <p>If you’re not sure about your nationality, try to find out from an official document like a passport or national ID card.</p>
+                        </div>
+                    </details>
+
+                    <p class="secondary-text">01/01/2018</p>
+                    <details>
+                        <summary>
+                            <span class="summary">Case registered</span>
+                        </summary>
+                        <div class="panel panel-border-narrow"></div>
+                    </details>
+
+                </div>
+            </div> -->
+        </div>
+    </main>
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script >
+function openCity(evt, cityName) {
+    // Declare all variables
+    var i, tabcontent, tablinks;
+
+    // Get all elements with class="tabcontent" and hide them
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+
+    // // Get all elements with class="tablinks" and remove the class "active"
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+
+    // Show the current tab, and add an "active" class to the button that opened the tab
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+} 
+</script>
+
+<script>
+$("#toggle").click(function(){
+    var $target = $('.target'),
+        $toggle = $(this);
+
+    $target.slideToggle( 200, function () {
+        $toggle.text(($target.is(':visible') ? 'Hide' : 'Show') + ' yes and no answers');
+    });
+});
+</script>
+
+
+
+
+{% endblock %}
