@@ -14,7 +14,36 @@
 
 <!-- <link type="text/css" rel="stylesheet" media="screen" href="/public/stylesheets/bootstrap.css"> -->
 
-<style type="text/css">
+<style type="text/css"> 
+.done-panel {
+  background-color: $nhs-blue;
+  text-align: center;
+  color: white;
+  padding: 20px;
+  margin: 30px 0;}
+  h1 {
+    padding-top: 0;
+    margin: 0;
+  }
+  h2 {
+    line-height: 145%;
+    font-size: 135%;
+    padding-top: 0;
+    margin: 10px 0 5px 0;
+  }
+}
+
+#done-tick {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  padding: 4px 20px 4px 4px;;
+  background-color: $nhs-blue;
+  background-image: url('/public/images/bsa/done-tick.png');
+  background-repeat: no-repeat;
+/*  background-position: center;*/
+}
+
 
 .task-due-soon {
     display: -moz-inline-stack;
@@ -367,69 +396,29 @@ color: white;
 
   <div class="large-numbers">
   
-              <p><strong>11</strong><br>To be accepted</p>
+              <p><strong>0</strong><br>To be accepted</p>
 
           </div>
 </div>
-  <!-- <div class="column-quarter">
-
-  <div class="large-numbers">
-  
-              <p><strong>9</strong><br>Pending</p>
-
-          </div>
 </div>
-  <div class="column-quarter">
-
-  <div class="large-numbers">
-  
-              <p><strong>5</strong><br>Printed</p>
-
-          </div>
-</div> -->
-</div>
-      <!-- Navbar - End -->
-<br>
-
-
-      <!-- Table - Start -->
-       <div class="row">
-<!--         <div class="small-12 columns"> -->
-          <table>
-            <thead>
-              <tr>
-          <!--     <th style="width:50px"></th> -->
-                <th style= "width:0%">Date received</th>
-                <th style= "min-width: 100px">Reference number</th>
-                <th style= "min-width: 200px">Name</th>
-                <th style= "width:  ">Date of birth</th>
-                <th style= "">Postcode</th>
-                 <!-- <th style= "">Status</th> -->
-                
-           <!--      <th width="19%">Registration date</th> -->
-              </tr>
-            </thead>
-            <tbody>
-              <tr class="second-row">
-       <!--        <td><img src="/public/images/web.svg" alt="" style="height:36px;"></td> -->
-              <td>01/01/2018</td>
-                <td><a href="case">56743897</a></td>
-                <td>Shiela Green</td>
-                <td>02/04/1984</td>
-                <td>NE12 A34</td>
-<!-- 
-                <td><strong class="task-due-soon">To do</strong></td> -->
-              </tr>
-              
-            
-            </tbody>
-          </table>
-          <br>
-
-
-      
-
+<hr>
+  <div class="grid-row" style="padding: 0px 15px 15px 15px">
+    <div class="done-panel">
+        
+<!--         <h1 class="heading-xlarge" style="margin-top:0"><span id="done-tick"> </span>Done</h1> -->
+              <h1 class="heading-large" style="margin-top: 0.5em">
+        <span class="heading-secondary" style="color:white">There are no more applications waiting to be accepted for</span>
+        01 January 2018
+      </h1>
+        
+      </div>
   </div>
+</div>
+
+
+
+
+
 
 </main>
 
@@ -437,7 +426,6 @@ color: white;
 
       </script>
 
-      <!-- #EndEditable -->
 
 
    {% endblock %}
