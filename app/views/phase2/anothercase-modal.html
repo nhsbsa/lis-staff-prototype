@@ -8,299 +8,71 @@
 
 <link type="text/css" rel="stylesheet" media="screen" href="../../../../assets/stylesheets/overrides.css">
 <link type="text/css" rel="stylesheet" media="screen" href="../../../../assets/stylesheets/complete.css">
+<style>
+/* Timeout Modal */
 
-<!-- #BeginEditable "styles" -->
-
-
-<!-- <link type="text/css" rel="stylesheet" media="screen" href="/public/stylesheets/bootstrap.css"> -->
-
-<style type="text/css">
-
-.task-due-soon {
-    display: -moz-inline-stack;
-    display: inline-block;
-    margin: 0 8px 0 0;
-        margin-right: 8px;
-    padding: 2px 5px 0;
-    font-weight: 700;
-    text-transform: none;
-    font-size: 16px;
-    line-height: 1.25;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    text-decoration: none;
-    color: #fff;
-    background-color: #b10e1e;
-    float: left;
-    margin-right: 0;
-    padding: 1px 5px 4px;
-        padding-top: 1px;
-    padding-top: 3px;
+@media (max-width: 640px){
+  .timeout-dialog {
+    width: 280px !important;
   }
-  .task-due-done {
-    display: -moz-inline-stack;
-    display: inline-block;
-    margin: 0 8px 0 0;
-        margin-right: 8px;
-    padding: 2px 5px 0;
-    font-weight: 700;
-    text-transform: none;
-    font-size: 16px;
-    line-height: 1.25;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    text-decoration: none;
-    color: #fff;
-    background-color: #28a197;
-    float: left;
-    margin-right: 0;
-    padding: 1px 5px 4px;
-        padding-top: 1px;
-    padding-top: 3px;
-  }
-    .task-due-pending {
-    display: -moz-inline-stack;
-    display: inline-block;
-    margin: 0 8px 0 0;
-        margin-right: 8px;
-    padding: 2px 5px 0;
-    font-weight: 700;
-    text-transform: none;
-    font-size: 16px;
-    line-height: 1.25;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    text-decoration: none;
-    color: #fff;
-    background-color: #2b8cc4;
-    float: left;
-    margin-right: 0;
-    padding: 1px 5px 4px;
-        padding-top: 1px;
-    padding-top: 3px;
+}
+
+.timeout-overlay {
+  z-index: 1001;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  filter: alpha(opacity=80);
+  -khtml-opacity: 0.8;
+  -moz-opacity: 0.8;
+  opacity: 0.8;
+}
+
+html.noScroll {
+  overflow: hidden;
+}
+
+.timeout-dialog {
+  z-index: 1002;
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 435px;
+  padding: 30px;
+  border: 5px solid black;
+  background-color: #fff;
+
+  p {
+    font-size: 19px;
+    line-height: 1.31579;
   }
 
-.label,.glyphicon { margin-right:5px; }
-
-.casecounter{
-  font-size:x-small;
-  vertical-align:middle;
-}
-
-.navtextsize{
-
-}
-
-#global-header #logo img {
-  width:auto !important;
-  position: relative;
-  top: -2px;
-  height: 34px;
-  padding-right: 6px;
-  float: left;
-  display: inline;
-  line-height: inherit;
-  border: none;
-}
-#global-header a#logo.content{
-  font-size:19px;
-}
-.navbar {
-    position: relative;
-    min-height: 55px;
-    margin-bottom: 20px;
-    }
-    .navbar-default {
-    background-color: #f8f8f8;}
-
-    .navbar-default {
-    border: none;
-    border-radius: 0;}
-
-    .navbar-form {
-    margin: 10px 0;
-    padding: 0;}
-
-    .navbar-form .input-group {
-    display: inline-table;
-    vertical-align: middle;
-}
-.input-group {
-    position: relative;
-    display: table;
-    border-collapse: separate;}
-.navbar-default .navbar-collapse, .navbar-default .navbar-form {
-    border-color: #e7e7e7;}
-    .navbar-left {
-    float: left !important;
-}
-.navbar-form .input-group > .form-control {
-    width: 100%;
-}
-nav.navbar .form-control {
-    height: 35px;
-}
-.input-group-btn {
-    position: relative;
-    font-size: 0;
+  .countdown {
+    display: inline-block;
     white-space: nowrap;
-}
-.input-group-btn:last-child > .btn, .input-group-btn:last-child > .btn-group {
-    margin-left: -1px;
-}
-nav .btn.btn-primary {
-    border-radius: 0;
-        border-top-left-radius: 0px;
-        border-bottom-left-radius: 0px;
-    background: black;}
-    .input-group-btn > .btn {
-    position: relative;
-}
-
-.site-search .content {
-    margin: 0 15px;
-}
-input.submit {
-  margin-left:-6.5px; 
-    width: 36px;
-    height: 38px;
-    border: 1px solid #005ea5;
-    border-width: 0 0 0 1px;
-    border-left-color: #222;
-    border-radius: 0;
-    overflow: hidden;
-    text-indent: -5000px;
-    color: #fff;
-    background-color: #005ea5;
-    background-image: url(https://assets.publishing.service.gov.uk/static/search-button-ca89b2a79f944909ceb7370d3f0b78811d32b96e883348fcd8886f63dd619585.png);
-    background-repeat: no-repeat;
-   background-position: 0%;}
-
-
-nav.navbar ul.pagination.see-all {
-    margin-left: 10px;
-}
-nav.navbar ul.pagination {
-    margin: 10px 0;
-    float: right;
-    height: 35px;
-}
-.pagination {
-    display: inline-block;
-    padding-left: 0;
-    border-radius: 4px;
-}
-.pagination > li {
-    display: inline;
-}
-nav.navbar ul.pagination li.active a {
-    background: #005ea5;
-    color: white;
-}
-nav.navbar ul.pagination {
-  margin: 10px 0;
-  float: right;
-  height: 35px;
-}
-
-nav.navbar ul.pagination.see-all {
-  margin-left: 10px;
-}
-
-nav.navbar ul.pagination li a, nav.navbar ul.pagination li a span {
-  font-size: 16px !important;
-  border-radius: 0;
-  color: #005ea5;
-  border-color: #005ea5;
-}
-
-nav.navbar ul.pagination li.active a {
-  background: #005ea5;
-  color: white;
-}
-
-.navbar-default {
-  border: none;
-  border-radius: 0;
-}
-
-nav ul.pagination li a {
-  border-radius: 0;
-}
-.pagination > li > a, .pagination > li > span {
-    position: relative;
-    float: left;
-    padding: 6px 12px;
-    margin-left: -1px;
-    line-height: 1.42857143;
-  background: #fff;
-    text-decoration: none;
-
-    border: 1px solid #ddd;
-
-}
-/*table > thead > tr > th {
-    border-bottom: 5px solid #ddd;
-}*/
-.second-row:hover { background: #f8f8f8;
-}
-  .large-numbers p strong {
-    font-size: 80px;
-    line-height: 1;
-    font-weight: bold;
-}
-
-/* Style the tab */
-.tabblue {
-    overflow: hidden;
-/*    border: 1px solid #ccc;*/
-    background-color: #005EB8;
-}
-
-/* Style the buttons that are used to open the tab content */
-.tabblue button {
-    background-color: inherit;
-    float: left;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    padding: 14px 16px;
-    transition: 0.3s;
-}
-
-/* Change background color of buttons on hover */
-.tabblue button:hover {
-    background-color: #ddd;
-    color: black;
-}
-
-/* Create an active/current tablink class */
-.tabblue button.active {
-    background-color: #ccc;
-}
-
-/* Style the tab content */
-.tabcontent {
-    display: none;
-    padding: 6px 12px;
-    border: 1px solid #ccc;
-    border-top: none;
-    font-size: 16px;
-} 
-.tablinksblue{
-font-size:16px;
-color: white;
-}
-.button {
-    background-color: #005EB8;
-    font-size: 14px;
-    padding-bottom:5px;
+    font-weight: 700;
   }
 
-.button:hover, .button:focus {
-    background-color:  #003087 ;
-}
 
+  .button{
+    margin-bottom: 1em;
+    font-size: 19px;
+  }
+
+
+  .button.button--link{
+    margin: 0;
+    padding: .526315em .789473em .263157em;
+  }
+
+
+}
 
 </style>
 <div id="menu">
@@ -587,109 +359,34 @@ color: white;
   </div>
 
 </main>
-      <script type="text/javascript" src="../../../../assets/js/bootstrap-switch/jquery.min.js"></script>
 
-      <!-- #BeginEditable "scripts" -->
-      <script type="text/javascript" src="../../../../assets/js/bootstrap/js/toggle-button.js"></script>
-      <script type="text/javascript" src="../../../../assets/js/jquery.tablesorter.min.js"></script>
-      <script type="text/javascript" src="js/casedata.js"></script>
-      <script type="text/javascript" src="../../../../assets/js/bootstrap/js/bootstrap.min.js"></script>
-      <script type="text/javascript" src="../../../../assets/js/jquery.cookie.js"></script>
+<div id="timeout-dialog" class="timeout-dialog" role="dialog" aria-labelledby="timeout-message" tabindex="-1" aria-live="polite">
+  <h1 class="heading-medium" style="margin-top:0.5em">This case is already being worked on by another assessor</h1>
+  <p id="timeout-message" role="text">You'll be given the next availible case.</p>
+<br>
 
-      <script type="text/javascript">
-      var rownumber;
+<!--   <button id="timeout-keep-signin-btn" class="button" style="margin-bottom:1em">Stay signed in</button> -->
+  <input class="button button--link" style="margin-bottom:1em" type="button" value="Get next case" onclick="window.location.href='assessors'">
+<!--   <p><a href="timedout-message2">Cancel application</a><p> -->
+<!--   <button id="timeout-sign-out-btn" class="button button--link">Sign out</button> -->
 
-      var url      = window.location.href;     // Returns full URL
-      var pathname = window.location.pathname; // Returns path only
-      $("#email-link").on("click", function (e) {
-        $.cookie("url", url, {path:'/'});
-        $.cookie("pathname", pathname, {path:'/'});
-      });
+<!--   <input class="button button--link" type="button" value="Sign out" onclick="window.location.href='timedout-message2'"> -->
+</div>
 
-      if ($.cookie("urn")) {
-        $("#urn").text($.cookie("urn")).addClass("bolder");
-        $(".urn").text($.cookie("urn")).addClass("bolder");
-      }
-
-      var filter = getParameterByName("filter");
-      if(filter==null||filter==""){
-        filter=1;
-      }
-
-      $(document).ready(function() {
-        $("table").tablesorter({widthFixed: true, widgets: ['zebra']}).tablesorterPager({container: $("#pager")});
-        // $('[data-toggle="tooltip"]').tooltip();
-      });
-
-      ///////////////////////// Delete Row Functionality - Start /////////////////////////
-      var documentValue;
-
-      $("#table tr").on("click", function (e) {
-        getRowNumber($(this).index()+1);
-        documentValue = $(this).find('td:nth-child(2)').text();
-        $("#document").text(documentValue);
-      });
-
-      $(".delete-row").on("click", function (e) {
-        $('#table-row-'+rownumber).hide(750);
-      });
-
-      function getRowNumber(row){
-        rownumber = row;
-      }
-      ///////////////////////// Delete Row Functionality - End /////////////////////////
-
-      $('[data-toggle="tooltip"]').tooltip("hide")
-
-      $("#urn").on("click", function (e) {
-        $('#urn').tablesorter();
-      });
-
-      $("#name").on("click", function (e) {
-        $('#name').tablesorter();
-      });
-
-      $("#date").on("click", function (e) {
-        $('#date').tablesorter();
-      });
-
-      // Approve cookies
-      $("#approve").on("click", function (e) {
-        $.cookie("document-title", $("#document-title").text(), {path:'/'});
-        $.cookie("document-type", $("#document-type").text(), {path:'/'});
-        $.cookie("document-creator", $("#document-creator").text(), {path:'/'});
-        $.cookie("document-description", $("#document-description").text(), {path:'/'});
-        $.cookie("document-date", $("#document-date").text(), {path:'/'});
-      });
-
-      function getParameterByName(name) {
-        name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
-        var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
-        results = regex.exec(location.search);
-        return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
-      }
-
-      var $rows = $('#table tr');
-      $('#search').keyup(function() {
-
-        var val = '^(?=.*\\b' + $.trim($(this).val()).split(/\s+/).join('\\b)(?=.*\\b') + ').*$',
-        reg = RegExp(val, 'i'),
-        text;
-
-        $rows.show().filter(function() {
-          text = $(this).text().replace(/\s+/g, ' ');
-          return !reg.test(text);
-        }).hide();
-      });
-
-      // #Search highlighted - Start
-
-      // #Search highlighted - End
+<div id="timeout-overlay" class="timeout-overlay"></div>
+</div>
+  </div>
+</div>
+<script>
+$.timeoutDialog({
+  timeout: 900,
+  countdown: 120,
+  keep_alive_url: '/keep-alive',
+  logout_url: '/sign-out',
+  keep_alive_button_text: 'Get another 15 minutes',
+  sign_out_button_text: 'Sign out'
+});
+</script>
 
 
-      </script>
-
-      <!-- #EndEditable -->
-
-
-   {% endblock %}
+{% endblock %}
