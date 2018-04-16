@@ -273,6 +273,21 @@ details{
   .local-header--plain .local-header__subtitle {
     font-size: 20px;
     margin-top: 0px; }
+
+
+    #select-box{
+      background:white;
+      color:black;
+      box-sizing: border-box;
+font-family: Arial, sans-serif;
+font-weight: 400;
+text-transform: none;
+font-size: 16px;
+line-height: 1.25;
+width: 100%;
+padding: 5px 4px 4px;
+border: 2px solid #0b0c0c;
+    }
 </style>
 
 <div id="menu">
@@ -332,12 +347,17 @@ details{
             <div class="column-half" style="padding-left:20px">
                 <h2 class="heading-large" style="margin-top:0px; color:#0072ce">Donna Goodman <span class="heading-medium" style="color:black">t9w m31</span></h2>
             </div>
-            <div class="column-one-quarter">            
-            <div class="form-group">
-            <a class="button" id="search-button" href="case" role="button">Get next application</a>
-            </div>
-            </div>
+            <div class="column-one-quarter">  
+            <div class="form-group" style="width:100%">
+  <select class="form-control" id="select-box" name="select-box" style="width:100%">
+    <option>Status of case</option>
+    <option>Complete</option>
+    <option>Further information needed</option>
+  </select>
+</div> 
+</div>         
         </div>
+
         <div class="grid-row">
             <div class="column-one-quarter">
                 <div class="grid-row highlight1" style="margin-top:0px">
@@ -410,7 +430,8 @@ details{
                             <li class="tab-link current" data-tab="tab-3">Income</li>
                             <li class="tab-link" data-tab="tab-4">Capital</li>
                             <li class="tab-link" data-tab="tab-5">Housing costs</li>
-                            <li class="tab-link" data-tab="tab-6">Others living in home</li>                            
+                            <li class="tab-link" data-tab="tab-6">Others living in home</li>
+                            <li class="tab-link" data-tab="tab-7">Refund</li>                            
                         </ul>
                         <div class="tab-content current" id="tab-3" style="margin:0px">
                             <br>
@@ -647,6 +668,7 @@ details{
                     </div>
                 </div>
             </div>
+            <div class="grid-row">
             <div class="column-one-quarter" style="">
 
 <!--             <div class="local-header">
@@ -663,7 +685,13 @@ details{
                 <h2 class="heading-medium">HC2</h2>
                 </div> -->
 <!-- <br> -->
-                <div class="grid-row highlight1" style="margin-top:0px; margin-right:1px; min-height: 0px">
+
+
+            <div class="form-group">
+            <a class="button" id="search-button" href="case" role="button">Get next application</a>
+            </div>
+            <br><br><br>
+                <div class="highlight1" style="margin-top:0px; margin-right:1px; min-height: 0px">
                 <h3 class="heading-small" style="margin-bottom: 0px">Uploaded documents</h3>
 <p><a href="#">View document</a></p>
                     <!-- <h3 class="heading-small" style="margin-bottom: 0px">History</h3>
@@ -698,6 +726,7 @@ details{
 
                 </div>
             </div> -->
+        </div>
         </div>
     </main>
 
