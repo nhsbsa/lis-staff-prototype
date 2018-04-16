@@ -290,8 +290,17 @@ nav ul.pagination li a {
 .tablinksblue{
 font-size:16px;
 color: white;
-
 }
+.button {
+    background-color: #005EB8;
+    font-size: 14px;
+    padding-bottom:5px;
+  }
+
+.button:hover, .button:focus {
+    background-color:  #003087 ;
+}
+
 
 </style>
 <div id="menu">
@@ -404,8 +413,8 @@ color: white;
                 <th style= "min-width: 200px">Name</th>
                 <th style= "width:  ">Date of birth</th>
                 <th style= "">Postcode</th>
-                <!--  <th style= "">Status</th> -->
                  <th style= "">Assessor</th>
+                 <th style= "width:100px"><input class="button" type="submit" value="Return to work queue" style="float:right"></th>
                 
            <!--      <th width="19%">Registration date</th> -->
               </tr>
@@ -419,8 +428,11 @@ color: white;
                 <td>02/04/1984</td>
                 <td>NE12 A34</td>
                 <td>H1345</td>
-
-                <!-- <td><strong class="task-due-done">Printed</strong></td> -->
+                <td>
+                  <div class="multiple-choice multiple-radio" style="margin: 0; background-color: transparent; border: none; float:right">
+                  <input id="letter" name="contact" type="checkbox" value="letter"> <label for="letter"></label>
+                  </div>
+                </td>
               </tr>
               <tr class="second-row">
 <!--               <td><img src="/public/images/web.svg" alt="" style="height:36px;"></td> -->
@@ -430,7 +442,9 @@ color: white;
                 <td>15/07/1982</td>
                 <td>BD12 4WL</td>
                 <td>H1345</td>
-                <!-- <td><strong class="task-due-done">Printed</strong></td> -->
+                <td><div class="multiple-choice multiple-radio" style="margin: 0; background-color: transparent; border: none; float:right">
+                  <input id="letter" name="contact" type="checkbox" value="letter"> <label for="letter"></label>
+                  </div></td>
 
               </tr>
               <tr class="second-row">
@@ -441,8 +455,10 @@ color: white;
                 <td>22/06/1949</td>
                 <td>GL54 0RU </td>
                 <td>H1345</td>
-
-                <!-- <td><strong class="task-due-soon">To do</strong></td> -->
+                <td><div class="multiple-choice multiple-radio" style="margin: 0; background-color: transparent; border: none; float:right">
+                  <input id="letter" name="contact" type="checkbox" value="letter"> <label for="letter"></label>
+                  </div>
+                </td>
               </tr>
 
               <tr class="second-row">
@@ -453,7 +469,10 @@ color: white;
                 <td>09/10/1972</td>
                 <td>EX31 0JA </td>
                 <td>H1345</td>
-                <!-- <td><strong class="task-due-soon">To do</strong></td> -->
+                <td><div class="multiple-choice multiple-radio" style="margin: 0; background-color: transparent; border: none; float:right">
+                  <input id="letter" name="contact" type="checkbox" value="letter"> <label for="letter"></label>
+                  </div>
+                </td>
               </tr>
                             <tr class="second-row">
                           <!--  <td><img src="/public/images/paper.svg" alt="" style="height:36px; padding-left:4px"></td> -->
@@ -463,9 +482,11 @@ color: white;
                 <td>23/08/1962</td>
                 <td>HP10 2ZU </td>
                 <td>H1345</td>
-
-  <!-- <td><strong class="task-due-soon">To do</strong></td> -->
+                <td>                  <div class="multiple-choice multiple-radio" style="margin: 0; background-color: transparent; border: none; float:right">
+                  <input id="letter" name="contact" type="checkbox" value="letter"> <label for="letter"></label>
+                  </div></td>
               </tr>
+
               <tr class="second-row">
              <!--  <td><img src="/public/images/paper.svg" alt="" style="height:36px; padding-left:4px"></td> -->
               <td>01/01/2018</td>
@@ -474,8 +495,9 @@ color: white;
                 <td>07/11/1971</td>
                 <td>SP4 2PS </td>
                 <td>H1345</td>
-
-               <!--  <td><strong class="task-due-soon">To do</strong></td> -->
+                <td>                  <div class="multiple-choice multiple-radio" style="margin: 0; background-color: transparent; border: none; float:right">
+                  <input id="letter" name="contact" type="checkbox" value="letter"> <label for="letter"></label>
+                  </div></td>
               </tr>
               <tr class="second-row">
              <!--  <td><img src="/public/images/paper.svg" alt="" style="height:36px; padding-left:4px"></td> -->
@@ -485,8 +507,9 @@ color: white;
                 <td>24/05/1985</td>
                 <td>LN8 8PE </td>
                 <td>H1345</td>
-
-                <!-- <td><strong class="task-due-pending">Pending</strong></td> -->
+                <td>                  <div class="multiple-choice multiple-radio" style="margin: 0; background-color: transparent; border: none; float:right">
+                  <input id="letter" name="contact" type="checkbox" value="letter"> <label for="letter"></label>
+                  </div></td>
               </tr>
               <tr class="second-row">
               <!-- <td><img src="/public/images/paper.svg" alt="" style="height:36px; padding-left:4px"></td> -->
@@ -496,7 +519,9 @@ color: white;
                 <td>13/04/1956</td>
                 <td>S74 8SQ </td>
                 <td>H1345</td>
-               <!--  <td><strong class="task-due-done">Printed</strong></td> -->
+                <td>                  <div class="multiple-choice multiple-radio" style="margin: 0; background-color: transparent; border: none; float:right">
+                  <input id="letter" name="contact" type="checkbox" value="letter"> <label for="letter"></label>
+                  </div></td>
               </tr>
               <tr class="second-row">
               <!-- <td><img src="/public/images/paper.svg" alt="" style="height:36px; padding-left:4px"></td> -->
@@ -506,7 +531,9 @@ color: white;
                 <td>02/04/1984</td>
                 <td>TR3 5BS </td>
                 <td>H1345</td>
-               <!--  <td><strong class="task-due-soon">To do</strong></td> -->
+                <td>                  <div class="multiple-choice multiple-radio" style="margin: 0; background-color: transparent; border: none; float:right">
+                  <input id="letter" name="contact" type="checkbox" value="letter"> <label for="letter"></label>
+                  </div></td>
               </tr>
               <tr class="second-row">
               <!-- <td><img src="/public/images/web.svg" alt="" style="height:36px;"></td> -->
@@ -516,7 +543,9 @@ color: white;
                 <td>11/05/1960</td>
                 <td>SA63 1EA</td>
                 <td>H1345</td>
-                <!-- <td><strong class="task-due-pending">Pending</strong></td> -->
+                <td>                  <div class="multiple-choice multiple-radio" style="margin: 0; background-color: transparent; border: none; float:right">
+                  <input id="letter" name="contact" type="checkbox" value="letter"> <label for="letter"></label>
+                  </div></td>
               </tr>
             
             </tbody>
